@@ -9,6 +9,10 @@ export const ui: Record<Lang, {
     experience: string;
     references: string;
   };
+  skillTiers: {
+    core: string;
+    familiar: string;
+  };
   currentLabel: string;
   linkedin: string;
   toggleLabel: string;
@@ -26,6 +30,10 @@ export const ui: Record<Lang, {
       experience: "Työkokemus",
       references: "Suosittelijat",
     },
+    skillTiers: {
+      core: "Ydinteknologiat",
+      familiar: "Myös kokemusta",
+    },
     currentLabel: "nykyinen",
     linkedin: "LinkedIn",
     toggleLabel: "EN",
@@ -42,6 +50,10 @@ export const ui: Record<Lang, {
       skills: "Skills",
       experience: "Work Experience",
       references: "References",
+    },
+    skillTiers: {
+      core: "Core stack",
+      familiar: "Also worked with",
     },
     currentLabel: "present",
     linkedin: "LinkedIn",

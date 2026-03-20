@@ -79,6 +79,7 @@ const CVPage = () => {
             items={skills[lang]}
             label={t.sections.skills}
             theme={th}
+            tierLabels={t.skillTiers}
           />
         </aside>
 
