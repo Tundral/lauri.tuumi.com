@@ -1,4 +1,4 @@
-export function buildTheme(dark: boolean) {
+export const buildTheme = (dark: boolean) => {
   return {
     pageBg:       dark ? "#0f172a" : "#f1f5f9",
     cardBg:       dark ? "#1e293b" : "#ffffff",
@@ -13,4 +13,4 @@ export function buildTheme(dark: boolean) {
     accentBlue:   dark ? "#60a5fa" : "#1e40af",
     timelineLine: dark ? "#1e40af" : "#1e40af",
   };
-}
+};

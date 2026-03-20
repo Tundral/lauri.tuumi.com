@@ -1,6 +1,6 @@
 import React from "react";
 
-export function ContactLink({
+export const ContactLink = ({
   href,
   children,
   small = false,
@@ -8,7 +8,7 @@ export function ContactLink({
   href: string;
   children: React.ReactNode;
   small?: boolean;
-}) {
+}) => {
   return (
     <a
       href={href}
@@ -24,4 +24,4 @@ export function ContactLink({
       {children}
     </a>
   );
-}
+};

@@ -1,6 +1,6 @@
 import React from "react";
 
-export function SkillBar({
+export const SkillBar = ({
   name,
   level,
   nameColor,
@@ -10,7 +10,7 @@ export function SkillBar({
   level: number;
   nameColor: string;
   trackColor: string;
-}) {
+}) => {
   return (
     <div style={{ marginBottom: "0.65rem" }}>
       <div style={{ fontSize: "0.8rem", color: nameColor, marginBottom: "0.25rem" }}>
@@ -35,4 +35,4 @@ export function SkillBar({
       </div>
     </div>
   );
-}
+};

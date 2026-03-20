@@ -1,6 +1,6 @@
 import React from "react";
 
-export function SectionHeading({
+export const SectionHeading = ({
   children,
   labelColor,
   lineColor,
@@ -8,7 +8,7 @@ export function SectionHeading({
   children: React.ReactNode;
   labelColor: string;
   lineColor: string;
-}) {
+}) => {
   return (
     <div
       style={{
@@ -43,4 +43,4 @@ export function SectionHeading({
       <div style={{ flex: 1, height: 1, background: lineColor }} />
     </div>
   );
-}
+};

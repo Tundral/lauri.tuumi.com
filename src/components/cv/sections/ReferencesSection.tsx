@@ -4,7 +4,7 @@ import { SectionHeading } from "../SectionHeading";
 import { ContactLink } from "../ContactLink";
 import { LinkedInIcon } from "../../icons/LinkedInIcon";
 
-export function ReferencesSection({
+export const ReferencesSection = ({
   items,
   label,
   linkedinLabel,
@@ -14,7 +14,7 @@ export function ReferencesSection({
   label: string;
   linkedinLabel: string;
   theme: Theme;
-}) {
+}) => {
   return (
     <section>
       <SectionHeading labelColor={theme.sectionLabel} lineColor={theme.sectionLine}>
@@ -65,4 +65,4 @@ export function ReferencesSection({
       </div>
     </section>
   );
-}
+};

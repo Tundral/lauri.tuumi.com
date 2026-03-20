@@ -3,7 +3,7 @@ import type { Skill, Theme } from "@/lib/types";
 import { SectionHeading } from "../SectionHeading";
 import { SkillBar } from "../SkillBar";
 
-export function SkillsSection({
+export const SkillsSection = ({
   items,
   label,
   theme,
@@ -11,7 +11,7 @@ export function SkillsSection({
   items: Skill[];
   label: string;
   theme: Theme;
-}) {
+}) => {
   return (
     <section>
       <SectionHeading labelColor={theme.sectionLabel} lineColor={theme.sectionLine}>
@@ -28,4 +28,4 @@ export function SkillsSection({
       ))}
     </section>
   );
-}
+};

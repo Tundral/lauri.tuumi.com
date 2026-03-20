@@ -3,13 +3,13 @@ import type { Lang, Job } from "../types";
 export const experience: Record<Lang, Job[]> = {
   fi: [
     {
-      title: "Staff Software Developer",
+      title: "Ohjelmistokehittäjä — Tekninen vastaava",
       company: "Teollisuuden Voima Oyj",
       period: "12/2024 – nykyinen",
       bullets: [
         "Full stack -kehitys Next.js-, Node.js- ja Express-teknologioilla",
         "Jaettujen TypeScript-abstraktioiden ja Zod-pohjaisten datasopimusten suunnittelu, jotka yhtenäistävät tiimikäytäntöjä rajoittamatta arkkitehtuurista joustavuutta",
-        "Arkkitehtuurisen suunnan johtaminen tiimissä – mahdollistavien mallien vakiinnuttaminen pakottavien sijaan, mikä vähentää perehdytyksen kitkaa ja pitää koodipohjaan mukautuvana",
+        "Arkkitehtuurisen suunnan johtaminen tiimissä – mahdollistavien mallien vakiinnuttaminen pakottavien sijaan, mikä vähentää perehdytyksen kitkaa ja pitää koodipohjan mukautuvana",
         "Kehittäjäergonomian ja koodikvaliteetin standardisoinnin edistäminen",
       ],
     },
@@ -28,7 +28,7 @@ export const experience: Record<Lang, Job[]> = {
       company: "Dyme Solutions Oy",
       period: "05/2023 – 10/2023",
       bullets: [
-        "DevOps: käänneautomaatiointi ja testausautomaatiointi (Groovy), CI/CD-putken kehitys ja versiointiratkaisut",
+        "DevOps: kääntämis- ja testausautomaatio (Groovy), CI/CD-putken kehitys ja versiointiratkaisut",
         "Jenkins-ympäristön Infrastructure as Code (IaC) Job DSL:llä",
         "Docker-ympäristön haavoittuvuusskannauksen integrointi (Jenkins, Trivy)",
         "AWS Lambda -palvelukomponentit (TypeScript, DynamoDB, SQS)",
@@ -62,7 +62,7 @@ export const experience: Record<Lang, Job[]> = {
   ],
   en: [
     {
-      title: "Staff Software Developer",
+      title: "Software Developer — Technical Lead",
       company: "Teollisuuden Voima Oyj",
       period: "12/2024 – present",
       bullets: [

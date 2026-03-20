@@ -13,14 +13,16 @@ export const metadata: Metadata = {
     "Lauri Tuumi – Ohjelmistokehittäjä ja tietojärjestelmäasiantuntija. CV / portfolio.",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="fi" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full">{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -2,7 +2,7 @@ import type { Lang } from "./types";
 
 export const ui: Record<Lang, {
   subtitle: string;
-  summary: string;
+  summary: string[];
   sections: {
     education: string;
     skills: string;
@@ -14,9 +14,12 @@ export const ui: Record<Lang, {
   toggleLabel: string;
 }> = {
   fi: {
-    subtitle: "Ohjelmistokehittäjä\u00a0/\u00a0Tietojärjestelmäasiantuntija",
-    summary:
-      "Full stack -ohjelmistokehittäjä, jolla on vahva painotus tyyppiturvallisuuteen ja koodikvaliteettiin TypeScript-ekosysteemissä. Kokemusta koko kehityskaaresta – CI/CD-automaatiosta ja pilvipalveluista moderneihin React- ja Next.js-frontendeihin. Kiinnostunut selkeästä arkkitehtuurista, kehittäjäergonomiasta ja AI-avusteisesta kehityksestä.",
+    subtitle: "Ohjelmistokehittäjä",
+    summary: [
+      "Full stack -ohjelmistokehittäjä ja tekninen vastaava koko kehityskaarella – arkkitehtuurista ja API-suunnittelusta ilmaisuvoimaisella, ergonomisella TypeScriptillä nykyaikaisiin Node.js- ja Next.js-sovelluksiin.",
+      "Keskityn tiimien tuottavuuteen ilman ylisuunnittelua: vahvat yhteiset käytänteet, hyvin suunnitellut abstraktiot ja harkitut ratkaisut siitä, milloin lisätä rakenetta ja milloin pysyä yksinkertaisella.",
+      "Kiinnostunut kehittäjäergonomiasta, periaatteellisesta arkkitehtuurista ja skaalautuvasta AI-avusteisesta kehityksestä.",
+    ],
     sections: {
       education: "Koulutus",
       skills: "Taidot",
@@ -28,9 +31,12 @@ export const ui: Record<Lang, {
     toggleLabel: "EN",
   },
   en: {
-    subtitle: "Software Developer\u00a0/\u00a0IT Systems Specialist",
-    summary:
-      "Full stack software developer and tech lead with a strong focus on type safety and code quality in the TypeScript ecosystem. Experience across the full development lifecycle — from CI/CD automation and cloud services to modern React and Next.js frontends. Focused on designing enabling abstractions that keep teams productive without rigid over-engineering — establishing shared patterns that reduce friction while preserving architectural flexibility. Interested in developer ergonomics, principled architecture, and AI-assisted development.",
+    subtitle: "Software Developer",
+    summary: [
+      "Full stack software developer and tech lead with experience across the full development lifecycle — from architecture and API design with expressive, ergonomic TypeScript, for modern Node.js and Next.js applications.",
+      "I focus on keeping teams productive without over-engineering: establishing shared conventions, writing enabling abstractions, and making deliberate calls about when to add structure and when to stay simple.",
+      "Interested in developer ergonomics, principled architecture, and scalable AI-assisted development.",
+    ],
     sections: {
       education: "Education",
       skills: "Skills",

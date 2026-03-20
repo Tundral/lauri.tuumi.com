@@ -1,6 +1,6 @@
 import React from "react";
 
-export function EmailModal({
+export const EmailModal = ({
   open,
   onClose,
   isDark,
@@ -14,7 +14,7 @@ export function EmailModal({
   email: string;
   copied: boolean;
   onCopy: () => void;
-}) {
+}) => {
   if (!open) return null;
 
   return (
@@ -82,4 +82,4 @@ export function EmailModal({
       </div>
     </div>
   );
-}
+};

@@ -2,7 +2,7 @@ import React from "react";
 import type { Job, Theme } from "@/lib/types";
 import { SectionHeading } from "../SectionHeading";
 
-export function ExperienceSection({
+export const ExperienceSection = ({
   items,
   label,
   theme,
@@ -10,7 +10,7 @@ export function ExperienceSection({
   items: Job[];
   label: string;
   theme: Theme;
-}) {
+}) => {
   return (
     <section>
       <SectionHeading labelColor={theme.sectionLabel} lineColor={theme.sectionLine}>
@@ -104,4 +104,4 @@ export function ExperienceSection({
       </div>
     </section>
   );
-}
+};

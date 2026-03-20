@@ -11,7 +11,7 @@ import { SkillsSection } from "./cv/sections/SkillsSection";
 import { ExperienceSection } from "./cv/sections/ExperienceSection";
 import { ReferencesSection } from "./cv/sections/ReferencesSection";
 
-export default function CVPage() {
+const CVPage = () => {
   const [lang, setLang] = useState<Lang>("en");
   const [isDark, setIsDark] = useState(false);
   const [emailModalOpen, setEmailModalOpen] = useState(false);
@@ -107,4 +107,6 @@ export default function CVPage() {
       `}</style>
     </div>
   );
-}
+};
+
+export default CVPage;

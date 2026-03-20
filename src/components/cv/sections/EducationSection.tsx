@@ -2,7 +2,7 @@ import React from "react";
 import type { Degree, Theme } from "@/lib/types";
 import { SectionHeading } from "../SectionHeading";
 
-export function EducationSection({
+export const EducationSection = ({
   items,
   label,
   theme,
@@ -10,7 +10,7 @@ export function EducationSection({
   items: Degree[];
   label: string;
   theme: Theme;
-}) {
+}) => {
   return (
     <section>
       <SectionHeading labelColor={theme.sectionLabel} lineColor={theme.sectionLine}>
@@ -52,4 +52,4 @@ export function EducationSection({
       </div>
     </section>
   );
-}
+};

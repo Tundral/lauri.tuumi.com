@@ -13,6 +13,12 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  // Prefer arrow functions over function declarations
+  {
+    rules: {
+      "prefer-arrow-callback": "warn",
+    },
+  },
 ]);
 
 export default eslintConfig;

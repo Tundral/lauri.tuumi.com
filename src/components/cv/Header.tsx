@@ -2,7 +2,7 @@ import React from "react";
 import { EmailIcon } from "../icons/EmailIcon";
 import { LinkedInIcon } from "../icons/LinkedInIcon";
 
-export function Header({
+export const Header = ({
   subtitle,
   summary,
   toggleLabel,
@@ -11,12 +11,12 @@ export function Header({
   onOpenEmail,
 }: {
   subtitle: string;
-  summary: string;
+  summary: string[];
   toggleLabel: string;
   linkedinUrl: string;
   onToggleLang: () => void;
   onOpenEmail: () => void;
-}) {
+}) => {
   return (
     <header
       style={{
@@ -124,18 +124,21 @@ export function Header({
           >
             {subtitle}
           </p>
-          <p
-            style={{
-              marginTop: "0.6rem",
-              fontSize: "0.82rem",
-              color: "#94a3b8",
-              fontWeight: 400,
-              maxWidth: "52ch",
-              lineHeight: 1.6,
-            }}
-          >
-            {summary}
-          </p>
+          {summary.map((para, i) => (
+            <p
+              key={i}
+              style={{
+                marginTop: i === 0 ? "0.6rem" : "0.4rem",
+                fontSize: "0.82rem",
+                color: "#94a3b8",
+                fontWeight: 400,
+                maxWidth: "52ch",
+                lineHeight: 1.6,
+              }}
+            >
+              {para}
+            </p>
+          ))}
           <div
             style={{
               marginTop: "0.9rem",
@@ -190,4 +193,4 @@ export function Header({
       </div>
     </header>
   );
-}
+};
