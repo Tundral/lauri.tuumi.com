@@ -1,29 +1,38 @@
+import { z } from "zod";
 import type { buildTheme } from "./theme";
 
 export type Lang = "fi" | "en";
 export type Theme = ReturnType<typeof buildTheme>;
 
-export type Skill = {
-  name: string;
-  level: number;
-};
+export const skillSchema = z.object({
+  name: z.string().min(1),
+  level: z.number().int().min(1).max(5),
+});
+export type Skill = z.infer<typeof skillSchema>;
 
-export type Degree = {
-  degree: string;
-  school: string;
-  years: string;
-};
+export const degreeSchema = z.object({
+  degree: z.string().min(1),
+  school: z.string().min(1),
+  years: z.string().regex(/^(\d{4}|\d{2}\/\d{4}) – (\d{4}|\d{2}\/\d{4})$/),
+});
+export type Degree = z.infer<typeof degreeSchema>;
 
-export type Job = {
-  title: string;
-  company: string;
-  period: string;
-  bullets: string[];
-};
+export const jobSchema = z.object({
+  title: z.string().min(1),
+  company: z.string().min(1),
+  period: z.string().regex(/^\d{2}\/\d{4} – (\d{2}\/\d{4}|present|nykyinen)$/),
+  bullets: z.array(z.string().min(5)).min(2).max(6),
+});
+export type Job = z.infer<typeof jobSchema>;
 
-export type Reference = {
-  name: string;
-  title: string;
-  company: string;
-  linkedin: string;
-};
+export const referenceSchema = z.object({
+  name: z.string().min(1),
+  title: z.string().min(1),
+  company: z.string().min(1),
+  linkedin: z
+    .url()
+    .refine((url) => url.includes("linkedin.com/in/"), {
+      message: "Must be a LinkedIn profile URL",
+    }),
+});
+export type Reference = z.infer<typeof referenceSchema>;

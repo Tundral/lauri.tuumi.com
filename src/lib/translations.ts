@@ -1,22 +1,29 @@
-import type { Lang } from "./types";
+import { z } from "zod";
 
-export const ui: Record<Lang, {
-  subtitle: string;
-  summary: string[];
-  sections: {
-    education: string;
-    skills: string;
-    experience: string;
-    references: string;
-  };
-  skillTiers: {
-    core: string;
-    familiar: string;
-  };
-  currentLabel: string;
-  linkedin: string;
-  toggleLabel: string;
-}> = {
+const uiEntrySchema = z.object({
+  subtitle: z.string().min(1),
+  summary: z.array(z.string().min(10)).length(3),
+  sections: z.object({
+    education: z.string().min(1),
+    skills: z.string().min(1),
+    experience: z.string().min(1),
+    references: z.string().min(1),
+  }),
+  skillTiers: z.object({
+    core: z.string().min(1),
+    familiar: z.string().min(1),
+  }),
+  currentLabel: z.string().min(1),
+  linkedin: z.string().min(1),
+  toggleLabel: z.enum(["FI", "EN"]),
+});
+
+const uiSchema = z.object({
+  fi: uiEntrySchema,
+  en: uiEntrySchema,
+});
+
+export const ui = uiSchema.parse({
   fi: {
     subtitle: "Ohjelmistokehittäjä",
     summary: [
@@ -59,4 +66,4 @@ export const ui: Record<Lang, {
     linkedin: "LinkedIn",
     toggleLabel: "FI",
   },
-};
+});

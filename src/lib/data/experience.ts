@@ -1,6 +1,12 @@
-import type { Lang, Job } from "../types";
+import { z } from "zod";
+import { jobSchema } from "../types";
 
-export const experience: Record<Lang, Job[]> = {
+const experienceSchema = z.object({
+  fi: z.array(jobSchema),
+  en: z.array(jobSchema),
+});
+
+export const experience = experienceSchema.parse({
   fi: [
     {
       title: "Ohjelmistokehittäjä — Tekninen vastaava",
@@ -119,4 +125,4 @@ export const experience: Record<Lang, Job[]> = {
       ],
     },
   ],
-};
+});

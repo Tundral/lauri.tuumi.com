@@ -9,7 +9,16 @@
       "Bash(find /c/Users/lauri/cv -type f -name *.pdf)",
       "WebSearch",
       "WebFetch(domain:developer.linkedin.com)",
-      "Bash(find /c/Users/lauri/cv/node_modules/next/dist/docs -type f -name *.md)"
+      "Bash(find /c/Users/lauri/cv/node_modules/next/dist/docs -type f -name *.md)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"require\\(''zod''\\); console.log\\(''zod ok''\\)\")",
+      "Bash(node -e \"console.log\\(require\\(''zod/package.json''\\).version\\)\")",
+      "Bash(node -e \"const {z} = require\\(''zod''\\); const s = z.object\\({ level: z.number\\(\\).int\\(\\).min\\(1\\).max\\(5\\) }\\); console.log\\(s.parse\\({ level: 3 }\\)\\); try { s.parse\\({ level: 0 }\\); } catch\\(e\\) { console.log\\(''rejected 0:'', e.issues[0].message\\) }\")",
+      "Bash(node -e \"const {z} = require\\(''zod''\\); const s = z.string\\(\\).url\\(\\); try { s.parse\\(''https://www.linkedin.com/in/lauri-tuumi-4898601a3/''\\); console.log\\(''url ok''\\) } catch\\(e\\) { console.log\\(''url failed:'', e.message\\) }\")",
+      "Bash(node -e \"const {z} = require\\(''zod''\\); const langSchema = z.enum\\([''fi'',''en'']\\); const s = z.object\\({ fi: z.array\\(z.string\\(\\)\\), en: z.array\\(z.string\\(\\)\\) }\\); console.log\\(JSON.stringify\\(s.parse\\({ fi: [''a''], en: [''b''] }\\)\\)\\)\")",
+      "Bash(node -e \"const {z} = require\\(''zod''\\); console.log\\(typeof z.url\\)\")",
+      "Bash(node -e \"const {z} = require\\(''zod''\\); const s = z.url\\(\\); console.log\\(s.parse\\(''https://www.linkedin.com/in/lauri/''\\)\\); try { s.parse\\(''not-a-url''\\) } catch\\(e\\) { console.log\\(''rejected:'', e.issues[0].message\\) }\")",
+      "Bash(node -e \"const {z} = require\\(''zod''\\); const s = z.url\\(\\).refine\\(u => u.includes\\(''linkedin.com/in/''\\)\\); console.log\\(s.parse\\(''https://www.linkedin.com/in/lauri/''\\)\\)\")"
     ]
   }
 }

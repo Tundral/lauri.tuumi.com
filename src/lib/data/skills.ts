@@ -1,6 +1,12 @@
-import type { Lang, Skill } from "../types";
+import { z } from "zod";
+import { skillSchema } from "../types";
 
-export const skills: Record<Lang, Skill[]> = {
+const skillsSchema = z.object({
+  fi: z.array(skillSchema),
+  en: z.array(skillSchema),
+});
+
+export const skills = skillsSchema.parse({
   fi: [
     { name: "Zod / TypeScript", level: 5 },
     { name: "Next.js", level: 4 },
@@ -25,4 +31,4 @@ export const skills: Record<Lang, Skill[]> = {
     { name: "Python", level: 2 },
     { name: "Java", level: 2 },
   ],
-};
+});

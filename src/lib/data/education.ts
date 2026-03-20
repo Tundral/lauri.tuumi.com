@@ -1,6 +1,12 @@
-import type { Lang, Degree } from "../types";
+import { z } from "zod";
+import { degreeSchema } from "../types";
 
-export const education: Record<Lang, Degree[]> = {
+const educationSchema = z.object({
+  fi: z.array(degreeSchema),
+  en: z.array(degreeSchema),
+});
+
+export const education = educationSchema.parse({
   fi: [
     {
       degree: "Tietojenkäsittelyn Tradenomitutkinto",
@@ -35,4 +41,4 @@ export const education: Record<Lang, Degree[]> = {
       years: "2014 – 2018",
     },
   ],
-};
+});

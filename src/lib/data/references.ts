@@ -1,6 +1,12 @@
-import type { Lang, Reference } from "../types";
+import { z } from "zod";
+import { referenceSchema } from "../types";
 
-export const references: Record<Lang, Reference[]> = {
+const referencesSchema = z.object({
+  fi: z.array(referenceSchema),
+  en: z.array(referenceSchema),
+});
+
+export const references = referencesSchema.parse({
   fi: [
     {
       name: "Sakari Peltomäki",
@@ -29,4 +35,4 @@ export const references: Record<Lang, Reference[]> = {
       linkedin: "https://www.linkedin.com/in/ahvonen/",
     },
   ],
-};
+});
