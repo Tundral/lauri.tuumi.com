@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const noteItemSchema = z.object({
   title: z.string().min(1),
-  body: z.string().min(10),
+  body: z.union([z.string().min(10), z.array(z.string().min(1)).min(1)]),
   link: z.object({ href: z.url(), label: z.string().min(1) }).optional(),
 });
 
@@ -89,16 +89,25 @@ export const ui = uiSchema.parse({
           link: { href: "https://github.com", label: "Katso GitHubissa →" },
         },
         {
+          title: "Luottamus & Integriteetti",
+          body: [
+            "Tämän CV:n suositukset ovat julkisesti vahvistettavissa — jokainen linkitetty tekijän itsensä avaamaan GitHub PR:ään tai LinkedIn-julkaisuun.",
+            "Luottamus ilman vahvistusta on pelkkä oletus; julkisesti tarkastettavat, identiteettiin sidotut väitteet ovat modernin digitaalisen infrastruktuurin perusta.",
+          ],
+        },
+        {
           title: "Staattinen Next.js-vienti",
-          body: "Julkaistu staattisena sivustona (GitHub Pages / Cloudflare Pages) — ei backendiä, ei hyökkäyspinta-alaa. Oikea ratkaisu yksinkertaiselle sivustolle.",
+          body: [
+            "Viety täysin staattisena sivustona — ei palvelinta, ei tietokantaa, ei backendiä hallinnoitavaksi tai suojattavaksi.",
+            "CV:lle tämä on ilmeisin valinta: nopea, yksinkertainen, ja monimutkaisuus vastaa ongelmaa.",
+          ],
         },
         {
           title: "Yhteydenotto-UX",
-          body: "Yksi klikkaus kopioi sähköpostiosoitteen; mailto:-linkki avaa sähköpostiohjelman suoraan. Ei etsimistä — vain yhteydenotto.",
-        },
-        {
-          title: "Luottamus & Integriteetti",
-          body: "Tämän CV:n suositukset ovat julkisesti vahvistettavissa — jokainen linkitetty tekijän itsensä avaamaan GitHub PR:ään tai LinkedIn-julkaisuun. Luottamus ilman vahvistusta on pelkkä oletus; julkisesti tarkastettavat, identiteettiin sidotut väitteet ovat modernin digitaalisen infrastruktuurin perusta.",
+          body: [
+            "Yksi klikkaus kopioi sähköpostiosoitteen; mailto:-linkki avaa sähköpostiohjelman suoraan. Ei etsimistä — vain yhteydenotto.",
+            "Pienet vuorovaikutukset kuten nämä heijastavat laajempaa kiinnostusta UX:ään — paras käyttöliittymä on sellainen, jota tuskin huomaa.",
+          ],
         },
       ],
     },
@@ -147,16 +156,25 @@ export const ui = uiSchema.parse({
           link: { href: "https://github.com", label: "View on GitHub →" },
         },
         {
+          title: "Trust & Integrity",
+          body: [
+            "Recommendations on this CV are publicly verifiable — each linked to a GitHub PR or LinkedIn post authored by the person themselves.",
+            "Trust without verification is just assumption; publicly auditable, identity-tied claims are the backbone of modern digital infrastructure.",
+          ],
+        },
+        {
           title: "Static Next.js Export",
-          body: "Deployed as a static site (GitHub Pages / Cloudflare Pages) — no backend, no attack surface. The right call for a simple site.",
+          body: [
+            "Exported as a fully static site — no server, no database, no backend to manage or secure.",
+            "For a CV, this is the obvious choice: fast, simple, and the complexity matches the problem.",
+          ],
         },
         {
           title: "Contact UX",
-          body: "One click copies the email address; a mailto: link opens your mail client directly. No hunting — just contact.",
-        },
-        {
-          title: "Trust & Integrity",
-          body: "Recommendations on this CV are publicly verifiable — each linked to a GitHub PR or LinkedIn post authored by the person themselves. Trust without verification is just assumption; publicly auditable, identity-tied claims are the backbone of modern digital infrastructure.",
+          body: [
+            "One click copies the email address; a mailto: link opens your mail client directly. No hunting — just contact.",
+            "Small interactions like these reflect a broader interest in UX — the best interface is one you barely notice.",
+          ],
         },
       ],
     },

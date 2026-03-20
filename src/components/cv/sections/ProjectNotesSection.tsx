@@ -4,7 +4,7 @@ import { SectionHeading } from "../SectionHeading";
 
 type NoteItem = {
   title: string;
-  body: string;
+  body: string | string[];
   link?: { href: string; label: string };
 };
 
@@ -52,7 +52,13 @@ export const ProjectNotesSection = ({
                 lineHeight: 1.5,
               }}
             >
-              {item.body}
+              {Array.isArray(item.body)
+                ? item.body.map((para, i) => (
+                    <p key={i} style={{ margin: i > 0 ? "0.5em 0 0" : 0 }}>
+                      {para}
+                    </p>
+                  ))
+                : item.body}
             </div>
             {item.link && (
               <a
