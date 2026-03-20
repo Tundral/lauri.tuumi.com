@@ -9,7 +9,8 @@ const referencesSchema = z.object({
 export const references = referencesSchema.parse({
   fi: [
     {
-      name: "Ville Vainio",
+      firstName: "Ville",
+      lastName: "Vainio",
       title: "Chief Cloud Developer",
       company: "Basware Oyj",
       linkedin: "https://www.linkedin.com/in/villevainio/",
@@ -21,7 +22,8 @@ export const references = referencesSchema.parse({
       },
     },
     {
-      name: "Mikko Koskela",
+      firstName: "Mikko",
+      lastName: "Koskela",
       title: "Lead Developer",
       company: "Teollisuuden Voima Oyj",
       linkedin: "https://www.linkedin.com/in/mikkokoskela/",
@@ -33,7 +35,8 @@ export const references = referencesSchema.parse({
       },
     },
     {
-      name: "Janne Lehtimäki",
+      firstName: "Janne",
+      lastName: "Lehtimäki",
       title: "Toimitusjohtaja",
       company: "Leafill Solutions Oy",
       linkedin: "https://www.linkedin.com/in/jannelehtimaki/",
@@ -45,7 +48,8 @@ export const references = referencesSchema.parse({
       },
     },
     {
-      name: "Timo Ahvonen",
+      firstName: "Timo",
+      lastName: "Ahvonen",
       title: "Transformation Officer",
       company: "Suomen Euromaster Oy",
       linkedin: "https://www.linkedin.com/in/ahvonen/",
@@ -59,7 +63,8 @@ export const references = referencesSchema.parse({
   ],
   en: [
     {
-      name: "Ville Vainio",
+      firstName: "Ville",
+      lastName: "Vainio",
       title: "Chief Cloud Developer",
       company: "Basware Oyj",
       linkedin: "https://www.linkedin.com/in/villevainio/",
@@ -71,7 +76,8 @@ export const references = referencesSchema.parse({
       },
     },
     {
-      name: "Mikko Koskela",
+      firstName: "Mikko",
+      lastName: "Koskela",
       title: "Lead Developer",
       company: "Teollisuuden Voima Oyj",
       linkedin: "https://www.linkedin.com/in/mikkokoskela/",
@@ -83,7 +89,8 @@ export const references = referencesSchema.parse({
       },
     },
     {
-      name: "Janne Lehtimäki",
+      firstName: "Janne",
+      lastName: "Lehtimäki",
       title: "CEO",
       company: "Leafill Solutions Oy",
       linkedin: "https://www.linkedin.com/in/jannelehtimaki/",
@@ -95,7 +102,8 @@ export const references = referencesSchema.parse({
       },
     },
     {
-      name: "Timo Ahvonen",
+      firstName: "Timo",
+      lastName: "Ahvonen",
       title: "Transformation Officer",
       company: "Suomen Euromaster Oy",
       linkedin: "https://www.linkedin.com/in/ahvonen/",

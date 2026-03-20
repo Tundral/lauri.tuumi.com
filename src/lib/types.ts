@@ -31,7 +31,8 @@ const verificationSchema = z.discriminatedUnion("type", [
 ]);
 
 export const referenceSchema = z.object({
-  name: z.string().min(1),
+  firstName: z.string().min(1),
+  lastName: z.string().min(1),
   title: z.string().min(1),
   company: z.string().min(1),
   linkedin: z

@@ -18,6 +18,22 @@ const GitHubIcon = () => (
   </svg>
 );
 
+type NoteTemplate = {
+  prefix: string;
+  conjunction: string;
+  oxfordComma: boolean;
+  suffix: string;
+};
+
+function buildNote(firstNames: string[], t: NoteTemplate): string {
+  const sep = t.oxfordComma ? `, ${t.conjunction} ` : ` ${t.conjunction} `;
+  const nameStr =
+    firstNames.length <= 1
+      ? (firstNames[0] ?? "")
+      : firstNames.slice(0, -1).join(", ") + sep + firstNames[firstNames.length - 1];
+  return [t.prefix, nameStr, t.suffix].filter(Boolean).join(" ");
+}
+
 type VerificationLabels = {
   pr: string;
   linkedin_post: string;
@@ -28,14 +44,14 @@ type VerificationLabels = {
 export const ReferencesSection = ({
   items,
   label,
-  note,
+  noteTemplate,
   linkedinLabel,
   verificationLabels,
   theme,
 }: {
   items: Reference[];
   label: string;
-  note: string;
+  noteTemplate: NoteTemplate;
   linkedinLabel: string;
   verificationLabels: VerificationLabels;
   theme: Theme;
@@ -50,7 +66,7 @@ export const ReferencesSection = ({
 
       <div style={{ marginBottom: "1rem" }}>
         <p style={{ fontSize: "0.78rem", color: theme.textMuted, margin: "0 0 0.35rem 0", fontStyle: "italic" }}>
-          {note}
+          {buildNote(items.map((r) => r.firstName), noteTemplate)}
         </p>
         <button
           onClick={() => setDialogOpen(true)}
@@ -77,7 +93,7 @@ export const ReferencesSection = ({
       >
         {items.map((ref) => (
           <div
-            key={ref.name}
+            key={`${ref.firstName} ${ref.lastName}`}
             style={{
               background: theme.cardBg,
               border: `1px solid ${theme.border}`,
@@ -90,7 +106,7 @@ export const ReferencesSection = ({
             }}
           >
             <div style={{ fontWeight: 700, fontSize: "0.88rem", color: theme.text }}>
-              {ref.name}
+              {ref.firstName} {ref.lastName}
             </div>
             <div
               style={{

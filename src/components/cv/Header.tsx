@@ -122,7 +122,7 @@ export const Header = ({
               fontWeight: 500,
             }}
           >
-            {subtitle}
+            {subtitle} <span style={{ color: "#f59e0b" }}>❤</span>
           </p>
           {summary.map((para, i) => (
             <p

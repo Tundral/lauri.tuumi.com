@@ -14,7 +14,12 @@ const uiEntrySchema = z.object({
     skills: z.string().min(1),
     experience: z.string().min(1),
     references: z.string().min(1),
-    referencesNote: z.string().min(1),
+    referencesNoteTemplate: z.object({
+      prefix: z.string(),
+      conjunction: z.string().min(1),
+      oxfordComma: z.boolean(),
+      suffix: z.string().min(1),
+    }),
   }),
   skillTiers: z.object({
     core: z.string().min(1),
@@ -57,7 +62,12 @@ export const ui = uiSchema.parse({
       skills: "Taidot",
       experience: "Työkokemus",
       references: "Suosittelijat",
-      referencesNote: "Kiitos Villelle, Mikolle, Jannelle ja Timolle julkisesta suosituksesta.",
+      referencesNoteTemplate: {
+        prefix: "",
+        conjunction: "ja",
+        oxfordComma: false,
+        suffix: "ovat julkisesti suositelleet minua. Iso kiitos heille siitä.",
+      },
     },
     skillTiers: {
       core: "Ydinteknologiat",
@@ -124,7 +134,12 @@ export const ui = uiSchema.parse({
       skills: "Skills",
       experience: "Work Experience",
       references: "References",
-      referencesNote: "Thank you to Ville, Mikko, Janne, and Timo for vouching for me publicly.",
+      referencesNoteTemplate: {
+        prefix: "Thank you to",
+        conjunction: "and",
+        oxfordComma: true,
+        suffix: "for vouching for me publicly.",
+      },
     },
     skillTiers: {
       core: "Core stack",

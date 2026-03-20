@@ -99,7 +99,7 @@ const CVPage = () => {
           <ReferencesSection
             items={references[lang]}
             label={t.sections.references}
-            note={t.sections.referencesNote}
+            noteTemplate={t.sections.referencesNoteTemplate}
             linkedinLabel={t.linkedin}
             verificationLabels={t.referenceVerification}
             theme={th}
