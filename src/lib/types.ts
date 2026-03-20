@@ -25,6 +25,11 @@ export const jobSchema = z.object({
 });
 export type Job = z.infer<typeof jobSchema>;
 
+const verificationSchema = z.discriminatedUnion("type", [
+  z.object({ type: z.literal("pr"), url: z.url() }),
+  z.object({ type: z.literal("linkedin_post"), url: z.url() }),
+]);
+
 export const referenceSchema = z.object({
   name: z.string().min(1),
   title: z.string().min(1),
@@ -34,5 +39,7 @@ export const referenceSchema = z.object({
     .refine((url) => url.includes("linkedin.com/in/"), {
       message: "Must be a LinkedIn profile URL",
     }),
+  quote: z.string().min(10),
+  verification: verificationSchema,
 });
 export type Reference = z.infer<typeof referenceSchema>;

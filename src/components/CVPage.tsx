@@ -8,6 +8,7 @@ import { Header } from "./cv/Header";
 import { EmailModal } from "./cv/EmailModal";
 import { EducationSection } from "./cv/sections/EducationSection";
 import { SkillsSection } from "./cv/sections/SkillsSection";
+import { ProjectNotesSection } from "./cv/sections/ProjectNotesSection";
 import { ExperienceSection } from "./cv/sections/ExperienceSection";
 import { ReferencesSection } from "./cv/sections/ReferencesSection";
 
@@ -81,6 +82,11 @@ const CVPage = () => {
             theme={th}
             tierLabels={t.skillTiers}
           />
+          <ProjectNotesSection
+            heading={t.notes.heading}
+            items={t.notes.items}
+            theme={th}
+          />
         </aside>
 
         {/* Right column */}
@@ -93,7 +99,9 @@ const CVPage = () => {
           <ReferencesSection
             items={references[lang]}
             label={t.sections.references}
+            note={t.sections.referencesNote}
             linkedinLabel={t.linkedin}
+            verificationLabels={t.referenceVerification}
             theme={th}
           />
         </div>
