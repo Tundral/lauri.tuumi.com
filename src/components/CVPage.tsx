@@ -49,7 +49,7 @@ const CVPage = () => {
         onOpenEmail={() => setEmailModalOpen(true)}
         downloadPdfSlot={
           <a
-            href={`/lauri-tuumi-cv-${lang}.pdf`}
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/lauri-tuumi-cv-${lang}.pdf`}
             download
             style={{
               display: "flex",
