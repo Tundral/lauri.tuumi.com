@@ -25,7 +25,13 @@
       "Bash(npx tsx:*)",
       "Bash(powershell -Command \"Remove-Item -Path ''C:\\\\Users\\\\lauri\\\\cv\\\\out'' -Recurse -Force\")",
       "Bash(find /c/Users/lauri/cv/src -type f \\\\\\(-name *.json -o -name *data* -o -name *config* \\\\\\))",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(node -e \":*)",
+      "Bash(npx --yes sharp-cli -i favicon.svg -o favicon-32.png resize 32 32)",
+      "Bash(npx sharp-cli:*)",
+      "Bash(node --input-type=module -e \":*)",
+      "Bash(rm favicon-16.png favicon-32.png favicon.svg)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }
