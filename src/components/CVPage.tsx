@@ -106,7 +106,11 @@ const CVPage = () => {
           />
           <ProjectNotesSection
             heading={t.notes.heading}
-            items={t.notes.items}
+            items={
+              references[lang].length > 0
+                ? t.notes.items
+                : t.notes.items.filter((item) => item.title !== "Trust & Integrity")
+            }
             theme={th}
           />
         </aside>
