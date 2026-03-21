@@ -28,7 +28,9 @@ export const ProjectNotesSection = ({
             key={item.title}
             style={{
               background: theme.cardBg,
-              border: `1px solid ${theme.border}`,
+              borderRight: `1px solid ${theme.border}`,
+              borderBottom: `1px solid ${theme.border}`,
+              borderLeft: `1px solid ${theme.border}`,
               borderTop: "3px solid #f59e0b",
               borderRadius: 6,
               padding: "0.85rem 1rem",

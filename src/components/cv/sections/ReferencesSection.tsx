@@ -66,7 +66,8 @@ export const ReferencesSection = ({
 
       <div style={{ marginBottom: "1rem" }}>
         <p style={{ fontSize: "0.78rem", color: theme.textMuted, margin: "0 0 0.35rem 0", fontStyle: "italic" }}>
-          {buildNote(items.map((r) => r.firstName), noteTemplate)}
+          {buildNote(items.map((r) => r.firstName), noteTemplate)}{" "}
+          <span style={{ color: "#f59e0b" }}>❤</span>
         </p>
         <button
           onClick={() => setDialogOpen(true)}
@@ -96,7 +97,9 @@ export const ReferencesSection = ({
             key={`${ref.firstName} ${ref.lastName}`}
             style={{
               background: theme.cardBg,
-              border: `1px solid ${theme.border}`,
+              borderRight: `1px solid ${theme.border}`,
+              borderBottom: `1px solid ${theme.border}`,
+              borderLeft: `1px solid ${theme.border}`,
               borderTop: "3px solid #f59e0b",
               borderRadius: 6,
               padding: "1rem",
@@ -186,7 +189,9 @@ export const ReferencesSection = ({
             onClick={(e) => e.stopPropagation()}
             style={{
               background: theme.cardBg,
-              border: `1px solid ${theme.border}`,
+              borderRight: `1px solid ${theme.border}`,
+              borderBottom: `1px solid ${theme.border}`,
+              borderLeft: `1px solid ${theme.border}`,
               borderTop: "3px solid #f59e0b",
               borderRadius: 8,
               padding: "1.5rem",

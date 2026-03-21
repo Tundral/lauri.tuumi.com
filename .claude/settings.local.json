@@ -23,7 +23,8 @@
       "Bash(find c:/Users/lauri/cv/node_modules/next/dist/docs/ -iname *build* -o -iname *hook* -o -iname *generate*)",
       "Bash(tsx --tsconfig tsconfig.scripts.json scripts/generate-pdfs.tsx)",
       "Bash(npx tsx:*)",
-      "Bash(powershell -Command \"Remove-Item -Path ''C:\\\\Users\\\\lauri\\\\cv\\\\out'' -Recurse -Force\")"
+      "Bash(powershell -Command \"Remove-Item -Path ''C:\\\\Users\\\\lauri\\\\cv\\\\out'' -Recurse -Force\")",
+      "Bash(find /c/Users/lauri/cv/src -type f \\\\\\(-name *.json -o -name *data* -o -name *config* \\\\\\))"
     ]
   }
 }

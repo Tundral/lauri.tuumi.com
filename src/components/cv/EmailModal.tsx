@@ -34,7 +34,9 @@ export const EmailModal = ({
         onClick={(e) => e.stopPropagation()}
         style={{
           background: isDark ? "#1e293b" : "#ffffff",
-          border: `1px solid ${isDark ? "#334155" : "#e2e8f0"}`,
+          borderRight: `1px solid ${isDark ? "#334155" : "#e2e8f0"}`,
+          borderBottom: `1px solid ${isDark ? "#334155" : "#e2e8f0"}`,
+          borderLeft: `1px solid ${isDark ? "#334155" : "#e2e8f0"}`,
           borderTop: "3px solid #f59e0b",
           borderRadius: 8,
           padding: "1.5rem",

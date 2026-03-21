@@ -118,14 +118,16 @@ const CVPage = () => {
             label={t.sections.experience}
             theme={th}
           />
-          <ReferencesSection
-            items={references[lang]}
-            label={t.sections.references}
-            noteTemplate={t.sections.referencesNoteTemplate}
-            linkedinLabel={t.linkedin}
-            verificationLabels={t.referenceVerification}
-            theme={th}
-          />
+          {references[lang].length > 0 && (
+            <ReferencesSection
+              items={references[lang]}
+              label={t.sections.references}
+              noteTemplate={t.sections.referencesNoteTemplate}
+              linkedinLabel={t.linkedin}
+              verificationLabels={t.referenceVerification}
+              theme={th}
+            />
+          )}
         </div>
       </main>
 
