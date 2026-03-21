@@ -47,6 +47,28 @@ const CVPage = () => {
         linkedinUrl={contact.linkedin}
         onToggleLang={() => setLang(lang === "fi" ? "en" : "fi")}
         onOpenEmail={() => setEmailModalOpen(true)}
+        downloadPdfSlot={
+          <a
+            href={`/lauri-tuumi-cv-${lang}.pdf`}
+            download
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              background: "rgba(255,255,255,0.08)",
+              color: "#cbd5e1",
+              border: "1px solid rgba(255,255,255,0.18)",
+              borderRadius: 6,
+              padding: "0.45rem 1rem",
+              fontSize: "0.82rem",
+              fontWeight: 600,
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            ↓ CV PDF
+          </a>
+        }
       />
 
       <EmailModal

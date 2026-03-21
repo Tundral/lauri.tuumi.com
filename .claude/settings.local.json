@@ -18,7 +18,12 @@
       "Bash(node -e \"const {z} = require\\(''zod''\\); const langSchema = z.enum\\([''fi'',''en'']\\); const s = z.object\\({ fi: z.array\\(z.string\\(\\)\\), en: z.array\\(z.string\\(\\)\\) }\\); console.log\\(JSON.stringify\\(s.parse\\({ fi: [''a''], en: [''b''] }\\)\\)\\)\")",
       "Bash(node -e \"const {z} = require\\(''zod''\\); console.log\\(typeof z.url\\)\")",
       "Bash(node -e \"const {z} = require\\(''zod''\\); const s = z.url\\(\\); console.log\\(s.parse\\(''https://www.linkedin.com/in/lauri/''\\)\\); try { s.parse\\(''not-a-url''\\) } catch\\(e\\) { console.log\\(''rejected:'', e.issues[0].message\\) }\")",
-      "Bash(node -e \"const {z} = require\\(''zod''\\); const s = z.url\\(\\).refine\\(u => u.includes\\(''linkedin.com/in/''\\)\\); console.log\\(s.parse\\(''https://www.linkedin.com/in/lauri/''\\)\\)\")"
+      "Bash(node -e \"const {z} = require\\(''zod''\\); const s = z.url\\(\\).refine\\(u => u.includes\\(''linkedin.com/in/''\\)\\); console.log\\(s.parse\\(''https://www.linkedin.com/in/lauri/''\\)\\)\")",
+      "Bash(ls -la /c/Users/lauri/cv/next.config.*)",
+      "Bash(find c:/Users/lauri/cv/node_modules/next/dist/docs/ -iname *build* -o -iname *hook* -o -iname *generate*)",
+      "Bash(tsx --tsconfig tsconfig.scripts.json scripts/generate-pdfs.tsx)",
+      "Bash(npx tsx:*)",
+      "Bash(powershell -Command \"Remove-Item -Path ''C:\\\\Users\\\\lauri\\\\cv\\\\out'' -Recurse -Force\")"
     ]
   }
 }

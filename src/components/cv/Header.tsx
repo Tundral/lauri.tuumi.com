@@ -9,6 +9,7 @@ export const Header = ({
   linkedinUrl,
   onToggleLang,
   onOpenEmail,
+  downloadPdfSlot,
 }: {
   subtitle: string;
   summary: string[];
@@ -16,6 +17,7 @@ export const Header = ({
   linkedinUrl: string;
   onToggleLang: () => void;
   onOpenEmail: () => void;
+  downloadPdfSlot?: React.ReactNode;
 }) => {
   return (
     <header
@@ -188,6 +190,8 @@ export const Header = ({
             >
               <LinkedInIcon /> LinkedIn
             </a>
+
+            {downloadPdfSlot}
           </div>
         </div>
       </div>

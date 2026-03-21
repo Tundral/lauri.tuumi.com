@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 /inspiration
+/public/lauri-tuumi-cv-en.pdf
+/public/lauri-tuumi-cv-fi.pdf
 *.pem
 
 # debug
