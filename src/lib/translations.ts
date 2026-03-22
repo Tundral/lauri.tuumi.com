@@ -51,7 +51,7 @@ const uiSchema = z.object({
 
 export const ui = uiSchema.parse({
   fi: {
-    subtitle: "Ohjelmistokehittäjä",
+    subtitle: "Tekninen Johtaja",
     summary: [
       "Olen full stack -ohjelmistokehittäjä ja tekninen vastaava. Hallitsen toteutusten elinkaarta arkkitehtuurista ja API-suunnittelusta skaalautuviin käyttönottoihin ja kehitykseen.",
       "Teknisena vastaavana keskityn tiimien tuottavuuteen ilman ylisuunnittelua: vahvat yhteiset käytänteet, hyödylliset yhteiset toimintamallit ja harkitut ratkaisut siitä, milloin lisätä rakenetta ja milloin pysyä yksinkertaisella.",
@@ -123,7 +123,7 @@ export const ui = uiSchema.parse({
     },
   },
   en: {
-    subtitle: "Software Developer",
+    subtitle: "Technical Lead",
     summary: [
       "I'm a full stack software developer and tech lead. I own the full lifecycle of implementations — from architecture and API design to scalable deployment and ongoing development.",
       "As tech lead, I focus on keeping teams productive without over-engineering: establishing shared conventions, creating useful shared patterns, and making deliberate calls about when to add structure and when to stay simple.",
