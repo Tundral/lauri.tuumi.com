@@ -120,7 +120,7 @@ export const Header = ({
             style={{
               marginTop: "0.45rem",
               fontSize: "0.95rem",
-              color: "#94a3b8",
+              color: "#cbd5e1",
               fontWeight: 500,
             }}
           >
@@ -132,7 +132,7 @@ export const Header = ({
               style={{
                 marginTop: i === 0 ? "0.6rem" : "0.4rem",
                 fontSize: "0.82rem",
-                color: "#94a3b8",
+                color: "#cbd5e1",
                 fontWeight: 400,
                 maxWidth: "52ch",
                 lineHeight: 1.6,

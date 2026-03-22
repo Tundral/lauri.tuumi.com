@@ -4,7 +4,7 @@ export const buildTheme = (dark: boolean) => {
     cardBg:       dark ? "#1e293b" : "#ffffff",
     border:       dark ? "#334155" : "#e2e8f0",
     text:         dark ? "#f1f5f9" : "#0f172a",
-    textMuted:    dark ? "#94a3b8" : "#475569",
+    textMuted:    dark ? "#cbd5e1" : "#94a3b8",
     sectionLabel: dark ? "#94a3b8" : "#334155",
     sectionLine:  dark ? "#334155" : "#e2e8f0",
     skillTrack:   dark ? "#334155" : "#e2e8f0",

@@ -18,15 +18,7 @@ export const SectionHeading = ({
         marginBottom: "1.25rem",
       }}
     >
-      <div
-        style={{
-          width: 10,
-          height: 10,
-          background: "#f59e0b",
-          transform: "rotate(45deg)",
-          flexShrink: 0,
-        }}
-      />
+      <div style={{ flex: 1, height: 1, background: lineColor }} />
       <h2
         style={{
           fontSize: "0.68rem",

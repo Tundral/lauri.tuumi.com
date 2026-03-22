@@ -53,9 +53,9 @@ export const ui = uiSchema.parse({
   fi: {
     subtitle: "Ohjelmistokehittäjä",
     summary: [
-      "Full stack -ohjelmistokehittäjä ja tekninen vastaava koko kehityskaarella – arkkitehtuurista ja API-suunnittelusta ilmaisuvoimaisella, ergonomisella TypeScriptillä nykyaikaisiin Node.js- ja Next.js-sovelluksiin.",
-      "Keskityn tiimien tuottavuuteen ilman ylisuunnittelua: vahvat yhteiset käytänteet, hyvin suunnitellut abstraktiot ja harkitut ratkaisut siitä, milloin lisätä rakenetta ja milloin pysyä yksinkertaisella.",
-      "Kiinnostunut kehittäjäergonomiasta, periaatteellisesta arkkitehtuurista ja skaalautuvasta AI-avusteisesta kehityksestä.",
+      "Olen full stack -ohjelmistokehittäjä ja tekninen vastaava. Hallitsen toteutusten elinkaarta arkkitehtuurista ja API-suunnittelusta skaalautuviin käyttönottoihin ja kehitykseen.",
+      "Teknisena vastaavana keskityn tiimien tuottavuuteen ilman ylisuunnittelua: vahvat yhteiset käytänteet, hyödylliset yhteiset toimintamallit ja harkitut ratkaisut siitä, milloin lisätä rakenetta ja milloin pysyä yksinkertaisella.",
+      "Olen kiinnostunut kehittäjäergonomiasta, periaatteellisesta arkkitehtuurista ja aidosti skaalautuvasta AI-avusteisesta kehityksestä.",
     ],
     sections: {
       education: "Koulutus",
@@ -95,28 +95,28 @@ export const ui = uiSchema.parse({
       items: [
         {
           title: "Lähdekoodi",
-          body: "Tämän CV:n lähdekoodi on avoin — katso miten se on rakennettu.",
+          body: "Olen julkaissut tämän CV:n lähdekoodin avoimesti — katso miten se on rakennettu.",
           link: { href: "https://github.com", label: "Katso GitHubissa →" },
         },
         {
           title: "Luottamus & Integriteetti",
           body: [
-            "Tämän CV:n suositukset ovat julkisesti vahvistettavissa — jokainen linkitetty tekijän itsensä avaamaan GitHub PR:ään tai LinkedIn-julkaisuun.",
+            "Olen tehnyt kaikista suosituksista julkisesti vahvistettavia — jokainen on linkitetty tekijän itsensä avaamaan GitHub PR:ään tai LinkedIn-julkaisuun.",
             "Luottamus ilman vahvistusta on pelkkä oletus; julkisesti tarkastettavat, identiteettiin sidotut väitteet ovat modernin digitaalisen infrastruktuurin perusta.",
           ],
         },
         {
-          title: "Staattinen Next.js-vienti",
+          title: "Staattinen Next.js-sivusto",
           body: [
-            "Viety täysin staattisena sivustona — ei palvelinta, ei tietokantaa, ei backendiä hallinnoitavaksi tai suojattavaksi.",
-            "CV:lle tämä on ilmeisin valinta: nopea, yksinkertainen, ja monimutkaisuus vastaa ongelmaa.",
+            "Tämä sivusto rakentuu staatiseksi HTMLäksi — ei palvelinta, ei tietokantaa, ei backendiä hallinnoitavaksi tai suojattavaksi.",
+            "CV:lle se on ilmeisin valinta: nopea, yksinkertainen, ja monimutkaisuus vastaa ongelmaa.",
           ],
         },
         {
           title: "Yhteydenotto-UX",
           body: [
-            "Yksi klikkaus kopioi sähköpostiosoitteen; mailto:-linkki avaa sähköpostiohjelman suoraan. Ei etsimistä — vain yhteydenotto.",
-            "Pienet vuorovaikutukset kuten nämä heijastavat laajempaa kiinnostusta UX:ään — paras käyttöliittymä on sellainen, jota tuskin huomaa.",
+            "En käytä erillistä sähköpostiohjelmaa, joten pelkkä mailto:-linkki tarkoittaisi osoitteen etsimistä ja manuaalista kopiointia. Yksi klikkaus kopioi sähköpostiosoitteen suoraan — ei kitkaa.",
+            "Pienet vuorovaikutukset kuten tämä heijastavat laajempaa kiinnostustani UX:ään: paras käyttöliittymä on sellainen, jota tuskin huomaa.",
           ],
         },
       ],
@@ -125,9 +125,9 @@ export const ui = uiSchema.parse({
   en: {
     subtitle: "Software Developer",
     summary: [
-      "Full stack software developer and tech lead with experience across the full development lifecycle — from architecture and API design with expressive, ergonomic TypeScript, for modern Node.js and Next.js applications.",
-      "I focus on keeping teams productive without over-engineering: establishing shared conventions, writing enabling abstractions, and making deliberate calls about when to add structure and when to stay simple.",
-      "Interested in developer ergonomics, principled architecture, and scalable AI-assisted development.",
+      "I'm a full stack software developer and tech lead. I own the full lifecycle of implementations — from architecture and API design to scalable deployment and ongoing development.",
+      "As tech lead, I focus on keeping teams productive without over-engineering: establishing shared conventions, creating useful shared patterns, and making deliberate calls about when to add structure and when to stay simple.",
+      "I'm interested in developer ergonomics, principled architecture, and truly scalable AI-assisted development.",
     ],
     sections: {
       education: "Education",
@@ -155,8 +155,8 @@ export const ui = uiSchema.parse({
       dialog: {
         title: "How verification works",
         body: [
-          "Each reference has verified their recommendation publicly — either by opening a pull request against this CV's GitHub repository, or by posting on LinkedIn.",
-          "A GitHub PR is tied to the author's GitHub identity and is permanently visible in the repository's history. A LinkedIn post is tied to their professional profile.",
+          "Each reference has verified their recommendation publicly — either by opening a pull request against this CV's GitHub repository, or on LinkedIn.",
+          "A GitHub PR is tied to the author's GitHub identity and is permanently visible in the repository's history. A LinkedIn recommendation is tied to their professional profile.",
           "Click the link on any card to inspect the source directly.",
         ],
         close: "Close",
@@ -167,28 +167,28 @@ export const ui = uiSchema.parse({
       items: [
         {
           title: "Source Code",
-          body: "The source for this CV is open — see how it's built.",
+          body: "I've open-sourced this CV — see how it's built.",
           link: { href: "https://github.com", label: "View on GitHub →" },
         },
         {
           title: "Trust & Integrity",
           body: [
-            "Recommendations on this CV are publicly verifiable — each linked to a GitHub PR or LinkedIn post authored by the person themselves.",
+            "I've made every recommendation on this CV publicly verifiable — each one is linked to a GitHub PR or LinkedIn recommendation authored by the person themselves.",
             "Trust without verification is just assumption; publicly auditable, identity-tied claims are the backbone of modern digital infrastructure.",
           ],
         },
         {
           title: "Static Next.js Export",
           body: [
-            "Exported as a fully static site — no server, no database, no backend to manage or secure.",
-            "For a CV, this is the obvious choice: fast, simple, and the complexity matches the problem.",
+            "This project is exported as a fully static site. Deploying to Github Pages or Cloudflare Pages means no backend or database to manage and secure.",
+            "For a CV, it's the obvious choice: fast, simple. The complexity matches the problem.",
           ],
         },
         {
           title: "Contact UX",
           body: [
-            "One click copies the email address; a mailto: link opens your mail client directly. No hunting — just contact.",
-            "Small interactions like these reflect a broader interest in UX — the best interface is one you barely notice.",
+            "I don't use a desktop email client, so a bare mailto: link would just mean hunting for the address to copy-paste it. I let the user choose how to handle the email — less friction, more results.",
+            "Small interactions like this reflect a broader interest in UX: the best interface is one you barely notice.",
           ],
         },
       ],

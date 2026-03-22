@@ -91,31 +91,7 @@ const CVPage = () => {
         }}
         className="cv-main-grid"
       >
-        {/* Left sidebar */}
-        <aside style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-          <EducationSection
-            items={education[lang]}
-            label={t.sections.education}
-            theme={th}
-          />
-          <SkillsSection
-            items={skills[lang]}
-            label={t.sections.skills}
-            theme={th}
-            tierLabels={t.skillTiers}
-          />
-          <ProjectNotesSection
-            heading={t.notes.heading}
-            items={
-              references[lang].length > 0
-                ? t.notes.items
-                : t.notes.items.filter((item) => item.title !== "Trust & Integrity")
-            }
-            theme={th}
-          />
-        </aside>
-
-        {/* Right column */}
+        {/* Left column */}
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <ExperienceSection
             items={experience[lang]}
@@ -133,12 +109,36 @@ const CVPage = () => {
             />
           )}
         </div>
+
+        {/* Right sidebar */}
+        <aside style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          <SkillsSection
+            items={skills[lang]}
+            label={t.sections.skills}
+            theme={th}
+            tierLabels={t.skillTiers}
+          />
+          <EducationSection
+            items={education[lang]}
+            label={t.sections.education}
+            theme={th}
+          />
+          <ProjectNotesSection
+            heading={t.notes.heading}
+            items={
+              references[lang].length > 0
+                ? t.notes.items
+                : t.notes.items.filter((item) => item.title !== "Trust & Integrity")
+            }
+            theme={th}
+          />
+        </aside>
       </main>
 
       <style>{`
         @media (min-width: 768px) {
           .cv-main-grid {
-            grid-template-columns: 210px 1fr !important;
+            grid-template-columns: 1fr 210px !important;
           }
         }
       `}</style>
