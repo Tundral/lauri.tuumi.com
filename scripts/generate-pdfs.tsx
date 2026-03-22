@@ -13,18 +13,20 @@ async function main() {
     errorCorrectionLevel: "M",
   });
 
-  for (const lang of ["en", "fi"] as const) {
-    const outPath = path.join(
-      process.cwd(),
-      "public",
-      `lauri-tuumi-cv-${lang}.pdf`
-    );
-    await renderToFile(
-      <CvPdfDocument lang={lang} qrDataUrl={qrDataUrl} />,
-      outPath
-    );
-    console.log(`Generated ${outPath}`);
-  }
+  await Promise.all(
+    (["en", "fi"] as const).map(async (lang) => {
+      const outPath = path.join(
+        process.cwd(),
+        "public",
+        `lauri-tuumi-cv-${lang}.pdf`
+      );
+      await renderToFile(
+        <CvPdfDocument lang={lang} qrDataUrl={qrDataUrl} />,
+        outPath
+      );
+      console.log(`Generated ${outPath}`);
+    })
+  );
 }
 
 main().catch((err) => {

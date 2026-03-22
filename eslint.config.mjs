@@ -14,9 +14,16 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   // Prefer arrow functions over function declarations
+  // Prefer functional iteration over imperative loops
   {
     rules: {
       "prefer-arrow-callback": "warn",
+      "no-restricted-syntax": [
+        "warn",
+        { selector: "ForStatement", message: "Use .map()/.forEach()/.reduce() instead of for loops." },
+        { selector: "ForInStatement", message: "Use Object.keys/values/entries() instead of for...in." },
+        { selector: "ForOfStatement", message: "Use .map()/.forEach() or Promise.all + .map() instead of for...of." },
+      ],
     },
   },
 ]);
