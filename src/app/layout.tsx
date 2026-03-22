@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Fira_Code } from "next/font/google";
 import "./globals.css";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const firaCode = Fira_Code({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -19,7 +19,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="fi" className={`${geist.variable} h-full antialiased`}>
+    <html lang="fi" className={`${firaCode.className} h-full antialiased`}>
       <body className="min-h-full">{children}</body>
     </html>
   );

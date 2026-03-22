@@ -123,6 +123,10 @@ const CVPage = () => {
             label={t.sections.education}
             theme={th}
           />
+        </aside>
+
+        {/* This CV — last on mobile, right column on desktop */}
+        <div className="this-cv-slot">
           <ProjectNotesSection
             heading={t.notes.heading}
             items={
@@ -132,13 +136,16 @@ const CVPage = () => {
             }
             theme={th}
           />
-        </aside>
+        </div>
       </main>
 
       <style>{`
         @media (min-width: 768px) {
           .cv-main-grid {
             grid-template-columns: 1fr 210px !important;
+          }
+          .this-cv-slot {
+            grid-column: 1;
           }
         }
       `}</style>

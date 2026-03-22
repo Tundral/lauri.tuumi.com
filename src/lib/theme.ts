@@ -10,6 +10,8 @@ export const buildTheme = (dark: boolean) => {
     skillTrack:   dark ? "#334155" : "#e2e8f0",
     badgeBg:      dark ? "#334155" : "#e2e8f0",
     badgeText:    dark ? "#94a3b8" : "#475569",
+    coreBadgeBg:  dark ? "#334155" : "#e2e8f0",
+    coreBadgeText: dark ? "#fb923c" : "#c2410c",
     accentBlue:   dark ? "#60a5fa" : "#1e40af",
     timelineLine: dark ? "#1e40af" : "#1e40af",
   };

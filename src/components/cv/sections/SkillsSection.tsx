@@ -16,7 +16,7 @@ export const SkillsSection = ({
   const coreSkills = items.filter((s) => s.level >= 4);
   const familiarSkills = items.filter((s) => s.level < 4);
 
-  const renderTier = (skills: Skill[], tierLabel: string) => (
+  const renderTier = (skills: Skill[], tierLabel: string, bg: string, text: string, fontSize = "0.78rem", fontWeight = 500) => (
     <div style={{ marginBottom: "1.25rem" }}>
       <div
         style={{
@@ -42,12 +42,12 @@ export const SkillsSection = ({
             key={s.name}
             style={{
               display: "inline-block",
-              background: theme.badgeBg,
-              color: theme.badgeText,
+              background: bg,
+              color: text,
               padding: "0.35rem 0.65rem",
               borderRadius: 4,
-              fontSize: "0.78rem",
-              fontWeight: 500,
+              fontSize,
+              fontWeight,
               whiteSpace: "nowrap",
             }}
           >
@@ -63,8 +63,8 @@ export const SkillsSection = ({
       <SectionHeading labelColor={theme.sectionLabel} lineColor={theme.sectionLine}>
         {label}
       </SectionHeading>
-      {renderTier(coreSkills, tierLabels.core)}
-      {renderTier(familiarSkills, tierLabels.familiar)}
+      {renderTier(coreSkills, tierLabels.core, theme.coreBadgeBg, theme.coreBadgeText, "0.82rem", 600)}
+      {renderTier(familiarSkills, tierLabels.familiar, theme.badgeBg, theme.badgeText)}
     </section>
   );
 };
