@@ -27,7 +27,7 @@ const uiEntrySchema = z.object({
   }),
   currentLabel: z.string().min(1),
   linkedin: z.string().min(1),
-  toggleLabel: z.enum(["FI", "EN"]),
+  toggleLabel: z.string().min(1),
   referenceVerification: z.object({
     pr: z.string().min(1),
     linkedin_post: z.string().min(1),
@@ -75,7 +75,7 @@ export const ui = uiSchema.parse({
     },
     currentLabel: "nykyinen",
     linkedin: "LinkedIn",
-    toggleLabel: "EN",
+    toggleLabel: "Read in English",
     referenceVerification: {
       pr: "Katso GitHub PR →",
       linkedin_post: "Katso LinkedIn-julkaisu →",
@@ -147,7 +147,7 @@ export const ui = uiSchema.parse({
     },
     currentLabel: "present",
     linkedin: "LinkedIn",
-    toggleLabel: "FI",
+    toggleLabel: "Lue suomeksi",
     referenceVerification: {
       pr: "View GitHub PR →",
       linkedin_post: "View LinkedIn Post →",

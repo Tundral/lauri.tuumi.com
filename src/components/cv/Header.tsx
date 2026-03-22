@@ -45,28 +45,6 @@ export const Header = ({
         <polygon points="1080,0 1200,0 1200,220 1180,220" fill="#1e40af" />
       </svg>
 
-      {/* Language toggle */}
-      <button
-        onClick={onToggleLang}
-        style={{
-          position: "absolute",
-          top: "1rem",
-          right: "1rem",
-          zIndex: 20,
-          background: "rgba(255,255,255,0.1)",
-          border: "1px solid rgba(255,255,255,0.25)",
-          borderRadius: 6,
-          color: "#fff",
-          fontSize: "0.75rem",
-          fontWeight: 700,
-          letterSpacing: "0.08em",
-          padding: "0.35rem 0.75rem",
-          cursor: "pointer",
-        }}
-      >
-        {toggleLabel}
-      </button>
-
       {/* Content */}
       <div
         style={{
@@ -126,6 +104,22 @@ export const Header = ({
           >
             {subtitle}
           </p>
+          <button
+            onClick={onToggleLang}
+            style={{
+              marginTop: "0.3rem",
+              background: "none",
+              border: "none",
+              padding: 0,
+              color: "#94a3b8",
+              fontSize: "0.78rem",
+              cursor: "pointer",
+              textDecoration: "underline",
+              textUnderlineOffset: "3px",
+            }}
+          >
+            {toggleLabel}
+          </button>
           {summary.map((para, i) => (
             <p
               key={i}
