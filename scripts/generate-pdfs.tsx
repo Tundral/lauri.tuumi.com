@@ -2,9 +2,11 @@ import { renderToFile } from "@react-pdf/renderer";
 import QRCode from "qrcode";
 import React from "react";
 import path from "path";
+import fs from "fs";
 import { CvPdfDocument } from "../src/components/cv/CvPdfDocument";
 
 async function main() {
+  fs.mkdirSync(path.join(process.cwd(), "public"), { recursive: true });
   const qrDataUrl = await QRCode.toDataURL("https://lauri.tuumi.com", {
     width: 300,
     margin: 1,
