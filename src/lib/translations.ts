@@ -185,6 +185,13 @@ export const ui = uiSchema.parse({
           ],
         },
         {
+          title: "PDF Export",
+          body: [
+            "The site generates a PDF on every deploy, so there's no separate file to maintain. When applying, I grab the latest from the site — no version drift, no stale attachments.",
+            "The exported PDF is ATS-friendly. Human readers are encouraged to view the full stylized version online.",
+          ],
+        },
+        {
           title: "Contact UX",
           body: [
             "I don't use a desktop email client, so a bare mailto: link would just mean hunting for the address to copy-paste it. I let the user choose how to handle the email — less friction, more results.",
