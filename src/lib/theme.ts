@@ -1,18 +1,17 @@
-export const buildTheme = (dark: boolean) => {
-  return {
-    pageBg:       dark ? "#0f172a" : "#f1f5f9",
-    cardBg:       dark ? "#1e293b" : "#ffffff",
-    border:       dark ? "#334155" : "#e2e8f0",
-    text:         dark ? "#f1f5f9" : "#0f172a",
-    textMuted:    dark ? "#cbd5e1" : "#94a3b8",
-    sectionLabel: dark ? "#94a3b8" : "#334155",
-    sectionLine:  dark ? "#334155" : "#e2e8f0",
-    skillTrack:   dark ? "#334155" : "#e2e8f0",
-    badgeBg:      dark ? "#334155" : "#e2e8f0",
-    badgeText:    dark ? "#94a3b8" : "#475569",
-    coreBadgeBg:  dark ? "#334155" : "#e2e8f0",
-    coreBadgeText: dark ? "#fb923c" : "#c2410c",
-    accentBlue:   dark ? "#60a5fa" : "#1e40af",
-    timelineLine: dark ? "#1e40af" : "#1e40af",
-  };
+import type { Theme } from "./types";
+
+export const theme: Theme = {
+  pageBg: "var(--cv-page-bg)",
+  cardBg: "var(--cv-card-bg)",
+  border: "var(--cv-border)",
+  text: "var(--cv-text)",
+  textMuted: "var(--cv-text-muted)",
+  sectionLabel: "var(--cv-section-label)",
+  sectionLine: "var(--cv-section-line)",
+  badgeBg: "var(--cv-badge-bg)",
+  badgeText: "var(--cv-badge-text)",
+  coreBadgeBg: "var(--cv-core-badge-bg)",
+  coreBadgeText: "var(--cv-core-badge-text)",
+  accentBlue: "var(--cv-accent-blue)",
+  timelineLine: "#1e40af",
 };

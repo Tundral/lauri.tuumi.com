@@ -244,9 +244,11 @@ const styles = StyleSheet.create({
 export const CvPdfDocument = ({
   lang,
   qrDataUrl,
+  siteUrl,
 }: {
   lang: Lang;
   qrDataUrl: string;
+  siteUrl: string;
 }) => {
   const t = ui[lang];
   const edu = education[lang];
@@ -272,8 +274,8 @@ export const CvPdfDocument = ({
               </View>
               <Text style={{ fontSize: 7, color: "#475569", marginTop: 5, fontFamily: "Helvetica-Oblique" }}>
                 {lang === "en"
-                  ? "Contact details omitted from this file — this PDF is publicly available and indexed to prevent scraping. Visit lauri.tuumi.com to get in touch."
-                  : "Yhteystiedot jätetty pois tästä tiedostosta — tämä PDF on julkisesti saatavilla ja indeksoitu, eikä sisällä henkilökohtaisia tietoja roskapostin estämiseksi. Ota yhteyttä osoitteessa lauri.tuumi.com."}
+                  ? `Contact details omitted from this file — this PDF is publicly available and indexed to prevent scraping. Visit ${siteUrl.replace("https://", "")} to get in touch.`
+                  : `Yhteystiedot jätetty pois tästä tiedostosta — tämä PDF on julkisesti saatavilla ja indeksoitu, eikä sisällä henkilökohtaisia tietoja roskapostin estämiseksi. Ota yhteyttä osoitteessa ${siteUrl.replace("https://", "")}.`}
               </Text>
             </View>
             <View style={styles.logoBox}>
@@ -294,11 +296,11 @@ export const CvPdfDocument = ({
                 ? "View the CV online"
                 : "Katso CV verkossa"}
             </Text>
-            <Link src="https://lauri.tuumi.com" style={styles.qrUrl}>lauri.tuumi.com</Link>
+            <Link src={siteUrl} style={styles.qrUrl}>{siteUrl.replace("https://", "")}</Link>
             <Text style={styles.qrNote}>
               {lang === "en"
-                ? "This PDF is generated from the CV website. Visit for the most up-to-date information."
-                : "Tämä PDF on luotu CV-sivustolta. Vieraile sivustolla ajantasaisimpien tietojen saamiseksi."}
+                ? `This PDF is generated from the CV website. Visit ${siteUrl.replace("https://", "")} for the most up-to-date information.`
+                : `Tämä PDF on luotu CV-sivustolta. Vieraile sivustolla ajantasaisimpien tietojen saamiseksi: ${siteUrl.replace("https://", "")}.`}
             </Text>
           </View>
         </View>

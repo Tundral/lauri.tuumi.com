@@ -1,52 +1,28 @@
-"use client";
-import React, { useState, useEffect } from "react";
 import type { Lang } from "@/lib/types";
-import { buildTheme } from "@/lib/theme";
+import { theme } from "@/lib/theme";
 import { ui } from "@/lib/translations";
 import { contact, getEmail, skills, education, experience, references } from "@/lib/data";
 import { Header } from "./cv/Header";
-import { EmailModal } from "./cv/EmailModal";
+import { EmailButton } from "./cv/EmailButton";
 import { EducationSection } from "./cv/sections/EducationSection";
 import { SkillsSection } from "./cv/sections/SkillsSection";
 import { ProjectNotesSection } from "./cv/sections/ProjectNotesSection";
 import { ExperienceSection } from "./cv/sections/ExperienceSection";
 import { ReferencesSection } from "./cv/sections/ReferencesSection";
 
-const CVPage = () => {
-  const [lang, setLang] = useState<Lang>("en");
-  const [isDark, setIsDark] = useState(false);
-  const [emailModalOpen, setEmailModalOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    setIsDark(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
+const CVPage = ({ lang }: { lang: Lang }) => {
   const t = ui[lang];
-  const th = buildTheme(isDark);
-
-  function handleCopy() {
-    navigator.clipboard.writeText(getEmail());
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-      setEmailModalOpen(false);
-    }, 1200);
-  }
+  const otherLang = lang === "en" ? "fi" : "en";
 
   return (
-    <div style={{ minHeight: "100vh", background: th.pageBg }}>
+    <div style={{ minHeight: "100vh", background: theme.pageBg }}>
       <Header
         subtitle={t.subtitle}
         summary={t.summary}
         toggleLabel={t.toggleLabel}
         linkedinUrl={contact.linkedin}
-        onToggleLang={() => setLang(lang === "fi" ? "en" : "fi")}
-        onOpenEmail={() => setEmailModalOpen(true)}
+        otherLangHref={`/${otherLang}`}
+        emailSlot={<EmailButton email={getEmail()} />}
         downloadPdfSlot={
           <a
             href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/lauri-tuumi-cv-${lang}.pdf`}
@@ -71,15 +47,6 @@ const CVPage = () => {
         }
       />
 
-      <EmailModal
-        open={emailModalOpen}
-        onClose={() => setEmailModalOpen(false)}
-        isDark={isDark}
-        email={getEmail()}
-        copied={copied}
-        onCopy={handleCopy}
-      />
-
       <main
         style={{
           maxWidth: 1000,
@@ -96,7 +63,7 @@ const CVPage = () => {
           <ExperienceSection
             items={experience[lang]}
             label={t.sections.experience}
-            theme={th}
+            theme={theme}
           />
           {references[lang].length > 0 && (
             <ReferencesSection
@@ -105,7 +72,7 @@ const CVPage = () => {
               noteTemplate={t.sections.referencesNoteTemplate}
               linkedinLabel={t.linkedin}
               verificationLabels={t.referenceVerification}
-              theme={th}
+              theme={theme}
             />
           )}
         </div>
@@ -115,13 +82,13 @@ const CVPage = () => {
           <SkillsSection
             items={skills[lang]}
             label={t.sections.skills}
-            theme={th}
+            theme={theme}
             tierLabels={t.skillTiers}
           />
           <EducationSection
             items={education[lang]}
             label={t.sections.education}
-            theme={th}
+            theme={theme}
           />
         </aside>
 
@@ -134,7 +101,7 @@ const CVPage = () => {
                 ? t.notes.items
                 : t.notes.items.filter((item) => item.title !== "Trust & Integrity")
             }
-            theme={th}
+            theme={theme}
           />
         </div>
       </main>

@@ -1,8 +1,22 @@
 import { z } from "zod";
-import type { buildTheme } from "./theme";
 
 export type Lang = "fi" | "en";
-export type Theme = ReturnType<typeof buildTheme>;
+
+export type Theme = {
+  pageBg: string;
+  cardBg: string;
+  border: string;
+  text: string;
+  textMuted: string;
+  sectionLabel: string;
+  sectionLine: string;
+  badgeBg: string;
+  badgeText: string;
+  coreBadgeBg: string;
+  coreBadgeText: string;
+  accentBlue: string;
+  timelineLine: string;
+};
 
 export const skillSchema = z.object({
   name: z.string().min(1),

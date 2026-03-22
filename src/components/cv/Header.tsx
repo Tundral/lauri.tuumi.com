@@ -1,5 +1,5 @@
 import React from "react";
-import { EmailIcon } from "../icons/EmailIcon";
+import Link from "next/link";
 import { LinkedInIcon } from "../icons/LinkedInIcon";
 
 export const Header = ({
@@ -7,16 +7,16 @@ export const Header = ({
   summary,
   toggleLabel,
   linkedinUrl,
-  onToggleLang,
-  onOpenEmail,
+  otherLangHref,
+  emailSlot,
   downloadPdfSlot,
 }: {
   subtitle: string;
   summary: string[];
   toggleLabel: string;
   linkedinUrl: string;
-  onToggleLang: () => void;
-  onOpenEmail: () => void;
+  otherLangHref: string;
+  emailSlot?: React.ReactNode;
   downloadPdfSlot?: React.ReactNode;
 }) => {
   return (
@@ -104,22 +104,19 @@ export const Header = ({
           >
             {subtitle}
           </p>
-          <button
-            onClick={onToggleLang}
+          <Link
+            href={otherLangHref}
             style={{
+              display: "inline-block",
               marginTop: "0.3rem",
-              background: "none",
-              border: "none",
-              padding: 0,
               color: "#94a3b8",
               fontSize: "0.78rem",
-              cursor: "pointer",
               textDecoration: "underline",
               textUnderlineOffset: "3px",
             }}
           >
             {toggleLabel}
-          </button>
+          </Link>
           {summary.map((para, i) => (
             <p
               key={i}
@@ -143,25 +140,7 @@ export const Header = ({
               gap: "0.65rem",
             }}
           >
-            <button
-              onClick={onOpenEmail}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.4rem",
-                background: "#f59e0b",
-                color: "#0f172a",
-                border: "none",
-                borderRadius: 6,
-                padding: "0.45rem 1rem",
-                fontSize: "0.82rem",
-                fontWeight: 700,
-                cursor: "pointer",
-                letterSpacing: "0.01em",
-              }}
-            >
-              <EmailIcon /> Email me
-            </button>
+            {emailSlot}
 
             <a
               href={linkedinUrl}

@@ -3,14 +3,12 @@ import React from "react";
 export const EmailModal = ({
   open,
   onClose,
-  isDark,
   email,
   copied,
   onCopy,
 }: {
   open: boolean;
   onClose: () => void;
-  isDark: boolean;
   email: string;
   copied: boolean;
   onCopy: () => void;
@@ -33,10 +31,10 @@ export const EmailModal = ({
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          background: isDark ? "#1e293b" : "#ffffff",
-          borderRight: `1px solid ${isDark ? "#334155" : "#e2e8f0"}`,
-          borderBottom: `1px solid ${isDark ? "#334155" : "#e2e8f0"}`,
-          borderLeft: `1px solid ${isDark ? "#334155" : "#e2e8f0"}`,
+          background: "var(--cv-card-bg)",
+          borderRight: "1px solid var(--cv-border)",
+          borderBottom: "1px solid var(--cv-border)",
+          borderLeft: "1px solid var(--cv-border)",
           borderTop: "3px solid #f59e0b",
           borderRadius: 8,
           padding: "1.5rem",
@@ -44,8 +42,8 @@ export const EmailModal = ({
           boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
         }}
       >
-        <p style={{ margin: "0 0 1rem", fontSize: "0.85rem", color: isDark ? "#94a3b8" : "#475569" }}>
-          <strong style={{ color: isDark ? "#f1f5f9" : "#0f172a" }}>{email}</strong>
+        <p style={{ margin: "0 0 1rem", fontSize: "0.85rem", color: "var(--cv-text-muted)" }}>
+          <strong style={{ color: "var(--cv-text)" }}>{email}</strong>
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
           <button
@@ -68,8 +66,8 @@ export const EmailModal = ({
             href={`mailto:${email}`}
             style={{
               display: "block",
-              background: isDark ? "#334155" : "#f1f5f9",
-              color: isDark ? "#cbd5e1" : "#475569",
+              background: "var(--cv-muted-bg)",
+              color: "var(--cv-text-muted)",
               border: "none",
               borderRadius: 6,
               padding: "0.55rem 1rem",
