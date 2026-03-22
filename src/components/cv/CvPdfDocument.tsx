@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Image,
+  Link,
   StyleSheet,
 } from "@react-pdf/renderer";
 import type { Lang } from "@/lib/types";
@@ -62,8 +63,8 @@ const styles = StyleSheet.create({
   // Header section
   headerSection: {
     backgroundColor: DARK,
-    paddingHorizontal: 28,
-    paddingTop: 18,
+    paddingHorizontal: 16,
+    paddingTop: 16,
     paddingBottom: 16,
     borderBottomWidth: 3,
     borderBottomColor: AMBER,
@@ -99,9 +100,26 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   leftCol: {
-    width: "33%",
+    width: "67%",
   },
   rightCol: {
+    width: "30%",
+  },
+  headerInner: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 14,
+  },
+  logoBox: {
+    width: 39,
+    height: 39,
+    borderRadius: 8,
+    backgroundColor: "#1e293b",
+    alignItems: "center",
+    justifyContent: "center",
+    flexShrink: 0,
+  },
+  headerContent: {
     flex: 1,
   },
   // Section headings
@@ -242,19 +260,29 @@ export const CvPdfDocument = ({
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.headerSection}>
-          <Text style={styles.name}>
-            <Text>Lauri </Text>
-            <Text style={styles.nameAccent}>Tuumi</Text>
-          </Text>
-          <Text style={styles.subtitle}>{t.subtitle}</Text>
-          <View style={styles.contactRow}>
-            <Text style={styles.contactItem}>{contact.linkedin}</Text>
+          <View style={styles.headerInner}>
+            <View style={styles.headerContent}>
+              <Text style={styles.name}>
+                <Text>Lauri </Text>
+                <Text style={styles.nameAccent}>Tuumi</Text>
+              </Text>
+              <Text style={styles.subtitle}>{t.subtitle}</Text>
+              <View style={styles.contactRow}>
+                <Text style={styles.contactItem}>{contact.linkedin}</Text>
+              </View>
+              <Text style={{ fontSize: 7, color: "#475569", marginTop: 5, fontFamily: "Helvetica-Oblique" }}>
+                {lang === "en"
+                  ? "Contact details omitted from this file — this PDF is publicly available and indexed to prevent scraping. Visit lauri.tuumi.com to get in touch."
+                  : "Yhteystiedot jätetty pois tästä tiedostosta — tämä PDF on julkisesti saatavilla ja indeksoitu, eikä sisällä henkilökohtaisia tietoja roskapostin estämiseksi. Ota yhteyttä osoitteessa lauri.tuumi.com."}
+              </Text>
+            </View>
+            <View style={styles.logoBox}>
+              <Text>
+                <Text style={{ fontSize: 18, fontFamily: "Helvetica-Bold", color: "#ffffff" }}>L</Text>
+                <Text style={{ fontSize: 18, fontFamily: "Helvetica-Bold", color: AMBER }}>T</Text>
+              </Text>
+            </View>
           </View>
-          <Text style={{ fontSize: 7, color: "#475569", marginTop: 5, fontFamily: "Helvetica-Oblique" }}>
-            {lang === "en"
-              ? "Contact details omitted from this file — this PDF is publicly available and indexed to prevent scraping. Visit lauri.tuumi.com to get in touch."
-              : "Yhteystiedot jätetty pois tästä tiedostosta — tämä PDF on julkisesti saatavilla ja indeksoitu, eikä sisällä henkilökohtaisia tietoja roskapostin estämiseksi. Ota yhteyttä osoitteessa lauri.tuumi.com."}
-          </Text>
         </View>
 
         {/* QR Banner */}
@@ -263,34 +291,43 @@ export const CvPdfDocument = ({
           <View style={styles.qrTextBlock}>
             <Text style={styles.qrHeadline}>
               {lang === "en"
-                ? "View the interactive CV online"
-                : "Katso interaktiivinen CV verkossa"}
+                ? "View the CV online"
+                : "Katso CV verkossa"}
             </Text>
-            <Text style={styles.qrUrl}>lauri.tuumi.com</Text>
+            <Link src="https://lauri.tuumi.com" style={styles.qrUrl}>lauri.tuumi.com</Link>
             <Text style={styles.qrNote}>
               {lang === "en"
-                ? "Includes verifiable references. Scan or visit the URL above."
-                : "Sisältää vahvistettavat suositukset. Skannaa tai avaa URL yllä."}
+                ? "This PDF is generated from the CV website. Visit for the most up-to-date information."
+                : "Tämä PDF on luotu CV-sivustolta. Vieraile sivustolla ajantasaisimpien tietojen saamiseksi."}
             </Text>
           </View>
         </View>
 
         {/* Body */}
         <View style={styles.body}>
-          {/* Left column */}
+          {/* Left column — Experience */}
           <View style={styles.leftCol}>
-            {/* Education */}
             <View style={styles.section}>
-              <Text style={styles.sectionHeading}>{t.sections.education}</Text>
-              {edu.map((d, i) => (
-                <View key={i}>
-                  <Text style={styles.degreeTitle}>{d.degree}</Text>
-                  <Text style={styles.degreeSchool}>{d.school}</Text>
-                  <Text style={styles.degreeYears}>{d.years}</Text>
+              <Text style={styles.sectionHeading}>{t.sections.experience}</Text>
+              {exp.map((job, i) => (
+                <View key={i} style={styles.jobBlock}>
+                  <Text style={styles.jobTitle}>{job.title}</Text>
+                  <Text style={styles.jobMeta}>
+                    {job.company} · {job.period}
+                  </Text>
+                  {job.bullets.map((b, j) => (
+                    <View key={j} style={styles.bullet}>
+                      <Text style={styles.bulletDash}>–</Text>
+                      <Text style={styles.bulletText}>{b}</Text>
+                    </View>
+                  ))}
                 </View>
               ))}
             </View>
+          </View>
 
+          {/* Right column — Skills + Education */}
+          <View style={styles.rightCol}>
             {/* Skills */}
             <View style={styles.section}>
               <Text style={styles.sectionHeading}>{t.sections.skills}</Text>
@@ -311,29 +348,18 @@ export const CvPdfDocument = ({
                 </View>
               ))}
             </View>
-          </View>
 
-          {/* Right column */}
-          <View style={styles.rightCol}>
-            {/* Experience */}
+            {/* Education */}
             <View style={styles.section}>
-              <Text style={styles.sectionHeading}>{t.sections.experience}</Text>
-              {exp.map((job, i) => (
-                <View key={i} style={styles.jobBlock}>
-                  <Text style={styles.jobTitle}>{job.title}</Text>
-                  <Text style={styles.jobMeta}>
-                    {job.company} · {job.period}
-                  </Text>
-                  {job.bullets.map((b, j) => (
-                    <View key={j} style={styles.bullet}>
-                      <Text style={styles.bulletDash}>–</Text>
-                      <Text style={styles.bulletText}>{b}</Text>
-                    </View>
-                  ))}
+              <Text style={styles.sectionHeading}>{t.sections.education}</Text>
+              {edu.map((d, i) => (
+                <View key={i}>
+                  <Text style={styles.degreeTitle}>{d.degree}</Text>
+                  <Text style={styles.degreeSchool}>{d.school}</Text>
+                  <Text style={styles.degreeYears}>{d.years}</Text>
                 </View>
               ))}
             </View>
-
           </View>
         </View>
       </Page>
