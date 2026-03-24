@@ -24,26 +24,37 @@ export const Header = ({
       style={{
         position: "relative",
         overflow: "hidden",
-        background: "#0f172a",
-        color: "#fff",
+        background: "var(--cv-page-bg)",
+        borderBottom: "2px solid rgba(0, 212, 255, 0.2)",
       }}
     >
-      {/* Geometric background */}
-      <svg
-        aria-hidden="true"
+      {/* Decorative glow */}
+      <div
         style={{
           position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
+          top: "-30%",
+          right: "-10%",
+          width: 400,
+          height: 400,
+          background: "rgba(0, 212, 255, 0.06)",
+          filter: "blur(120px)",
+          borderRadius: "50%",
+          pointerEvents: "none",
         }}
-        viewBox="0 0 1200 220"
-        preserveAspectRatio="xMidYMid slice"
-      >
-        <polygon points="780,0 1200,0 1200,220 880,220" fill="#1e3a8a" />
-        <polygon points="910,0 1060,0 1160,220 1010,220" fill="#f59e0b" />
-        <polygon points="1080,0 1200,0 1200,220 1180,220" fill="#1e40af" />
-      </svg>
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-20%",
+          left: "-10%",
+          width: 300,
+          height: 300,
+          background: "rgba(255, 0, 255, 0.04)",
+          filter: "blur(100px)",
+          borderRadius: "50%",
+          pointerEvents: "none",
+        }}
+      />
 
       {/* Content */}
       <div
@@ -52,120 +63,173 @@ export const Header = ({
           zIndex: 10,
           maxWidth: 1000,
           margin: "0 auto",
-          padding: "2.5rem 2rem",
+          padding: "3rem 2rem 2.5rem",
           display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          gap: "1.75rem",
+          flexDirection: "column",
+          gap: "1.5rem",
         }}
       >
-        {/* Avatar */}
+        {/* Status bar */}
         <div
           style={{
-            width: 108,
-            height: 108,
-            borderRadius: "50%",
-            border: "4px solid #f59e0b",
-            background: "#1e293b",
-            display: "flex",
+            display: "inline-flex",
             alignItems: "center",
-            justifyContent: "center",
-            fontSize: "1.6rem",
-            fontWeight: 900,
-            color: "#f59e0b",
-            flexShrink: 0,
-            letterSpacing: "-0.02em",
+            gap: "0.75rem",
+            padding: "0.3rem 0.75rem",
+            background: "rgba(0, 212, 255, 0.08)",
+            borderLeft: "3px solid var(--cv-primary)",
+            alignSelf: "flex-start",
           }}
         >
-          LT
+          <span
+            style={{
+              fontSize: "0.65rem",
+              fontWeight: 700,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "var(--cv-secondary)",
+            }}
+          >
+            PROFILE_ACTIVE
+          </span>
         </div>
 
-        {/* Name + title + contact */}
-        <div>
-          <h1
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1.75rem" }}>
+          {/* Avatar */}
+          <div
             style={{
-              fontSize: "clamp(2rem, 6vw, 3.25rem)",
+              width: 108,
+              height: 108,
+              border: "2px solid var(--cv-primary)",
+              background: "var(--cv-muted-bg)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "1.6rem",
               fontWeight: 900,
-              lineHeight: 1.05,
-              letterSpacing: "-0.025em",
-              margin: 0,
+              color: "var(--cv-primary)",
+              flexShrink: 0,
+              letterSpacing: "-0.02em",
+              textTransform: "uppercase",
+              fontStyle: "italic",
+              position: "relative",
             }}
           >
-            <span style={{ color: "#ffffff" }}>Lauri </span>
-            <span style={{ color: "#f59e0b" }}>Tuumi</span>
-          </h1>
-          <p
-            style={{
-              marginTop: "0.45rem",
-              fontSize: "0.95rem",
-              color: "#cbd5e1",
-              fontWeight: 500,
-            }}
-          >
-            {subtitle}
-          </p>
-          <Link
-            href={otherLangHref}
-            style={{
-              display: "inline-block",
-              marginTop: "0.3rem",
-              color: "#94a3b8",
-              fontSize: "0.78rem",
-              textDecoration: "underline",
-              textUnderlineOffset: "3px",
-            }}
-          >
-            {toggleLabel}
-          </Link>
+            <span>LT</span>
+            {/* Corner accent */}
+            <div
+              style={{
+                position: "absolute",
+                top: -2,
+                right: -2,
+                width: 12,
+                height: 12,
+                borderTop: "2px solid var(--cv-tertiary)",
+                borderRight: "2px solid var(--cv-tertiary)",
+              }}
+            />
+          </div>
+
+          {/* Name + title */}
+          <div style={{ flex: 1 }}>
+            <h1
+              style={{
+                fontSize: "clamp(2rem, 6vw, 3.5rem)",
+                fontWeight: 900,
+                lineHeight: 0.9,
+                letterSpacing: "-0.03em",
+                margin: 0,
+                textTransform: "uppercase",
+                fontStyle: "italic",
+              }}
+            >
+              <span style={{ color: "#ffffff" }}>Lauri </span>
+              <span style={{ color: "var(--cv-primary)" }}>Tuumi</span>
+            </h1>
+            <p
+              style={{
+                marginTop: "0.6rem",
+                fontSize: "0.95rem",
+                color: "var(--cv-secondary)",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+              }}
+            >
+              {subtitle}
+            </p>
+            <Link
+              href={otherLangHref}
+              style={{
+                display: "inline-block",
+                marginTop: "0.35rem",
+                color: "var(--cv-text-muted)",
+                fontSize: "0.73rem",
+                fontWeight: 600,
+                textDecoration: "none",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                borderBottom: "1px solid rgba(255, 255, 255, 0.15)",
+                paddingBottom: "0.15rem",
+              }}
+            >
+              {toggleLabel}
+            </Link>
+          </div>
+        </div>
+
+        {/* Summary */}
+        <div style={{ borderLeft: "1px solid var(--cv-border)", paddingLeft: "1.25rem", maxWidth: "56ch" }}>
           {summary.map((para, i) => (
             <p
               key={i}
               style={{
-                marginTop: i === 0 ? "0.6rem" : "0.4rem",
-                fontSize: "0.82rem",
-                color: "#cbd5e1",
+                margin: i === 0 ? 0 : "0.5rem 0 0",
+                fontSize: "0.85rem",
+                color: "var(--cv-text-muted)",
                 fontWeight: 400,
-                maxWidth: "52ch",
-                lineHeight: 1.6,
+                lineHeight: 1.65,
               }}
             >
               {para}
             </p>
           ))}
-          <div
+        </div>
+
+        {/* Action buttons */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "0.65rem",
+          }}
+        >
+          {emailSlot}
+
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              marginTop: "0.9rem",
               display: "flex",
-              flexWrap: "wrap",
-              gap: "0.65rem",
+              alignItems: "center",
+              gap: "0.4rem",
+              background: "transparent",
+              color: "var(--cv-secondary)",
+              border: "1px solid var(--cv-border)",
+              padding: "0.45rem 1rem",
+              fontSize: "0.78rem",
+              fontWeight: 700,
+              textDecoration: "none",
+              cursor: "pointer",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
             }}
           >
-            {emailSlot}
+            <LinkedInIcon /> LinkedIn
+          </a>
 
-            <a
-              href={linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.4rem",
-                background: "rgba(255,255,255,0.08)",
-                color: "#cbd5e1",
-                border: "1px solid rgba(255,255,255,0.18)",
-                borderRadius: 6,
-                padding: "0.45rem 1rem",
-                fontSize: "0.82rem",
-                fontWeight: 600,
-                textDecoration: "none",
-                cursor: "pointer",
-              }}
-            >
-              <LinkedInIcon /> LinkedIn
-            </a>
-
-            {downloadPdfSlot}
-          </div>
+          {downloadPdfSlot}
         </div>
       </div>
     </header>

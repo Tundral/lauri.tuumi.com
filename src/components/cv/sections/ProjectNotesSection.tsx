@@ -28,21 +28,20 @@ export const ProjectNotesSection = ({
             key={item.title}
             style={{
               background: theme.cardBg,
-              borderRight: `1px solid ${theme.border}`,
-              borderBottom: `1px solid ${theme.border}`,
-              borderLeft: `1px solid ${theme.border}`,
-              borderTop: "3px solid #f59e0b",
-              borderRadius: 6,
+              border: `1px solid ${theme.border}`,
+              borderTop: `3px solid ${theme.primary}`,
               padding: "0.85rem 1rem",
-              boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+              boxShadow: "2px 2px 0px rgba(0, 212, 255, 0.1)",
             }}
           >
             <div
               style={{
-                fontWeight: 700,
-                fontSize: "0.82rem",
+                fontWeight: 800,
+                fontSize: "0.78rem",
                 color: theme.text,
                 marginBottom: "0.35rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
               }}
             >
               {item.title}
@@ -70,10 +69,12 @@ export const ProjectNotesSection = ({
                 style={{
                   display: "inline-block",
                   marginTop: "0.5rem",
-                  fontSize: "0.73rem",
-                  fontWeight: 600,
-                  color: theme.accentBlue,
+                  fontSize: "0.7rem",
+                  fontWeight: 700,
+                  color: theme.secondary,
                   textDecoration: "none",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
                 }}
               >
                 {item.link.label}

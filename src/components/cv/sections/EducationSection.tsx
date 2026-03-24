@@ -20,15 +20,18 @@ export const EducationSection = ({
         {items.map((edu) => (
           <div
             key={edu.degree}
-            style={{ borderLeft: "3px solid #f59e0b", paddingLeft: "0.875rem" }}
+            style={{
+              borderLeft: `3px solid ${theme.primary}`,
+              paddingLeft: "0.875rem",
+            }}
           >
             <div
               style={{
-                fontSize: "0.68rem",
+                fontSize: "0.65rem",
                 fontWeight: 700,
-                color: "#d97706",
+                color: theme.secondary,
                 textTransform: "uppercase",
-                letterSpacing: "0.1em",
+                letterSpacing: "0.2em",
               }}
             >
               {edu.years}
@@ -37,9 +40,10 @@ export const EducationSection = ({
               style={{
                 marginTop: "0.15rem",
                 fontSize: "0.83rem",
-                fontWeight: 600,
+                fontWeight: 700,
                 color: theme.text,
                 lineHeight: 1.35,
+                textTransform: "uppercase",
               }}
             >
               {edu.degree}

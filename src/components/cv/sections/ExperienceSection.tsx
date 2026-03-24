@@ -21,21 +21,23 @@ export const ExperienceSection = ({
           <div
             key={job.company + job.period}
             style={{
+              background: theme.cardBg,
+              border: `1px solid ${theme.border}`,
+              boxShadow: "4px 4px 0px 0px rgba(0, 212, 255, 0.15)",
+              padding: "1.25rem",
               position: "relative",
-              paddingLeft: "1.25rem",
-              borderLeft: `2px solid ${theme.timelineLine}`,
             }}
           >
-            {/* Diamond marker */}
+            {/* Top stripe */}
             <div
               style={{
                 position: "absolute",
-                left: -6,
-                top: 6,
-                width: 10,
-                height: 10,
-                background: "#f59e0b",
-                transform: "rotate(45deg)",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: 3,
+                background: `linear-gradient(90deg, ${theme.primary} 0%, ${theme.primary} 25%, transparent 25%, transparent 100%)`,
+                backgroundSize: "20px 100%",
               }}
             />
 
@@ -46,27 +48,42 @@ export const ExperienceSection = ({
                 justifyContent: "space-between",
                 alignItems: "flex-start",
                 gap: "0.5rem",
-                marginBottom: "0.5rem",
+                marginBottom: "0.75rem",
               }}
             >
               <div>
-                <div style={{ fontWeight: 700, fontSize: "0.93rem", color: theme.text }}>
+                <div
+                  style={{
+                    fontWeight: 900,
+                    fontSize: "1rem",
+                    color: theme.text,
+                    textTransform: "uppercase",
+                    fontStyle: "italic",
+                    letterSpacing: "-0.01em",
+                  }}
+                >
                   {job.title}
                 </div>
-                <div style={{ fontSize: "0.78rem", fontWeight: 600, color: theme.accentBlue }}>
+                <div
+                  style={{
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    color: theme.primary,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                  }}
+                >
                   {job.company}
                 </div>
               </div>
               <span
                 style={{
-                  fontSize: "0.68rem",
-                  fontWeight: 600,
-                  background: theme.badgeBg,
-                  color: theme.badgeText,
-                  padding: "0.2rem 0.55rem",
-                  borderRadius: 4,
+                  fontSize: "0.65rem",
+                  fontWeight: 700,
+                  color: theme.secondary,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
                   whiteSpace: "nowrap",
-                  letterSpacing: "0.04em",
                 }}
               >
                 {job.period}
@@ -80,21 +97,34 @@ export const ExperienceSection = ({
                 padding: 0,
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.3rem",
+                gap: "0.4rem",
               }}
             >
-              {job.bullets.map((bullet) => (
+              {job.bullets.map((bullet, i) => (
                 <li
                   key={bullet}
                   style={{
                     display: "flex",
-                    gap: "0.45rem",
+                    gap: "0.65rem",
                     fontSize: "0.8rem",
                     color: theme.textMuted,
                     lineHeight: 1.5,
+                    alignItems: "flex-start",
+                    borderBottom: i < job.bullets.length - 1 ? "1px solid rgba(255,255,255,0.03)" : "none",
+                    paddingBottom: i < job.bullets.length - 1 ? "0.4rem" : 0,
                   }}
                 >
-                  <span style={{ color: "#f59e0b", flexShrink: 0, marginTop: "0.1rem" }}>▸</span>
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      marginTop: "0.3rem",
+                      width: "0.5rem",
+                      height: "0.5rem",
+                      minWidth: "0.5rem",
+                      background: theme.secondary,
+                      display: "inline-block",
+                    }}
+                  />
                   <span>{bullet}</span>
                 </li>
               ))}

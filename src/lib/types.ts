@@ -10,12 +10,9 @@ export type Theme = {
   textMuted: string;
   sectionLabel: string;
   sectionLine: string;
-  badgeBg: string;
-  badgeText: string;
-  coreBadgeBg: string;
-  coreBadgeText: string;
-  accentBlue: string;
-  timelineLine: string;
+  primary: string;
+  secondary: string;
+  tertiary: string;
 };
 
 export const skillSchema = z.object({

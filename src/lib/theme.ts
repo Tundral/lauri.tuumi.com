@@ -8,10 +8,7 @@ export const theme: Theme = {
   textMuted: "var(--cv-text-muted)",
   sectionLabel: "var(--cv-section-label)",
   sectionLine: "var(--cv-section-line)",
-  badgeBg: "var(--cv-badge-bg)",
-  badgeText: "var(--cv-badge-text)",
-  coreBadgeBg: "var(--cv-core-badge-bg)",
-  coreBadgeText: "var(--cv-core-badge-text)",
-  accentBlue: "var(--cv-accent-blue)",
-  timelineLine: "#1e40af",
+  primary: "var(--cv-primary)",
+  secondary: "var(--cv-secondary)",
+  tertiary: "var(--cv-tertiary)",
 };

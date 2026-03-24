@@ -18,12 +18,11 @@ export const SectionHeading = ({
         marginBottom: "1.25rem",
       }}
     >
-      <div style={{ flex: 1, height: 1, background: lineColor }} />
       <h2
         style={{
           fontSize: "0.68rem",
-          fontWeight: 800,
-          letterSpacing: "0.2em",
+          fontWeight: 900,
+          letterSpacing: "0.3em",
           textTransform: "uppercase",
           color: labelColor,
           margin: 0,

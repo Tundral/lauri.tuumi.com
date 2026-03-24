@@ -31,18 +31,19 @@ const CVPage = ({ lang }: { lang: Lang }) => {
               display: "flex",
               alignItems: "center",
               gap: "0.4rem",
-              background: "rgba(255,255,255,0.08)",
-              color: "#cbd5e1",
-              border: "1px solid rgba(255,255,255,0.18)",
-              borderRadius: 6,
+              background: "transparent",
+              color: "var(--cv-text-muted)",
+              border: "1px solid var(--cv-border)",
               padding: "0.45rem 1rem",
-              fontSize: "0.82rem",
-              fontWeight: 600,
+              fontSize: "0.78rem",
+              fontWeight: 700,
               textDecoration: "none",
               cursor: "pointer",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
             }}
           >
-            ↓ CV PDF
+            &#x2193; CV PDF
           </a>
         }
       />

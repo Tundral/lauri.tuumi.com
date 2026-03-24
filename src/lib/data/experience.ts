@@ -13,9 +13,9 @@ export const experience = experienceSchema.parse({
       company: "Teollisuuden Voima Oyj",
       period: "12/2024 – nykyinen",
       bullets: [
+        "Arkkitehtuurisen suunnan johtaminen yli 10 hengen tiimissä – mahdollistavien mallien vakiinnuttaminen pakottavien sijaan, mikä vähentää perehdytyksen kitkaa ja pitää koodipohjan mukautuvana",
         "Full stack -kehitys Next.js-, Node.js- ja Express-teknologioilla",
         "Jaettujen TypeScript-abstraktioiden ja Zod-pohjaisten datasopimusten suunnittelu, jotka yhtenäistävät tiimikäytäntöjä rajoittamatta arkkitehtuurista joustavuutta",
-        "Arkkitehtuurisen suunnan johtaminen tiimissä – mahdollistavien mallien vakiinnuttaminen pakottavien sijaan, mikä vähentää perehdytyksen kitkaa ja pitää koodipohjan mukautuvana",
       ],
     },
     {
@@ -65,9 +65,9 @@ export const experience = experienceSchema.parse({
       company: "Teollisuuden Voima Oyj",
       period: "12/2024 – present",
       bullets: [
+        "Led architectural direction for our 10+ person team, establishing enabling patterns over prescriptive ones — reducing onboarding friction while keeping the codebase adaptable",
         "Full stack development with Next.js, Node.js, and Express",
         "Designed shared TypeScript abstractions and Zod-based data contracts that standardise team practices without constraining architectural flexibility",
-        "Led architectural direction for the team, establishing enabling patterns over prescriptive ones — reducing onboarding friction while keeping the codebase adaptable",
       ],
     },
     {

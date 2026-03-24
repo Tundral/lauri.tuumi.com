@@ -24,15 +24,15 @@ export const EmailButton = ({ email }: { email: string }) => {
           display: "flex",
           alignItems: "center",
           gap: "0.4rem",
-          background: "#f59e0b",
-          color: "#0f172a",
+          background: "var(--cv-primary)",
+          color: "#000",
           border: "none",
-          borderRadius: 6,
           padding: "0.45rem 1rem",
-          fontSize: "0.82rem",
-          fontWeight: 700,
+          fontSize: "0.78rem",
+          fontWeight: 800,
           cursor: "pointer",
-          letterSpacing: "0.01em",
+          textTransform: "uppercase",
+          letterSpacing: "0.05em",
         }}
       >
         <EmailIcon /> Email me

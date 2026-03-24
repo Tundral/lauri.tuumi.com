@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Fira_Code } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "../globals.css";
 import { ui } from "@/lib/translations";
 
-const firaCode = Fira_Code({
+const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const EnLayout = ({ children }: { children: React.ReactNode }) => (
-  <html lang="en" className={`${firaCode.className} h-full antialiased`}>
+  <html lang="en" className={`${spaceGrotesk.className} h-full antialiased`}>
     <body className="min-h-full">{children}</body>
   </html>
 );

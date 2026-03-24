@@ -25,21 +25,18 @@ export const EmailModal = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "rgba(0,0,0,0.55)",
+        background: "rgba(0,0,0,0.7)",
       }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
           background: "var(--cv-card-bg)",
-          borderRight: "1px solid var(--cv-border)",
-          borderBottom: "1px solid var(--cv-border)",
-          borderLeft: "1px solid var(--cv-border)",
-          borderTop: "3px solid #f59e0b",
-          borderRadius: 8,
+          border: "1px solid var(--cv-border)",
+          borderTop: "3px solid var(--cv-primary)",
           padding: "1.5rem",
           minWidth: 300,
-          boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+          boxShadow: "6px 6px 0px rgba(0, 212, 255, 0.2)",
         }}
       >
         <p style={{ margin: "0 0 1rem", fontSize: "0.85rem", color: "var(--cv-text-muted)" }}>
@@ -49,15 +46,16 @@ export const EmailModal = ({
           <button
             onClick={onCopy}
             style={{
-              background: "#f59e0b",
-              color: "#0f172a",
+              background: "var(--cv-primary)",
+              color: "#000",
               border: "none",
-              borderRadius: 6,
               padding: "0.55rem 1rem",
-              fontSize: "0.82rem",
-              fontWeight: 700,
+              fontSize: "0.78rem",
+              fontWeight: 800,
               cursor: "pointer",
               textAlign: "left",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
             }}
           >
             {copied ? "Copied!" : "Copy address"}
@@ -68,12 +66,13 @@ export const EmailModal = ({
               display: "block",
               background: "var(--cv-muted-bg)",
               color: "var(--cv-text-muted)",
-              border: "none",
-              borderRadius: 6,
+              border: "1px solid var(--cv-border)",
               padding: "0.55rem 1rem",
-              fontSize: "0.82rem",
+              fontSize: "0.78rem",
               fontWeight: 600,
               textDecoration: "none",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
             }}
           >
             Open in mail app

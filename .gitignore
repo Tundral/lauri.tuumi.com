@@ -25,6 +25,8 @@
 /inspiration
 /public/lauri-tuumi-cv-en.pdf
 /public/lauri-tuumi-cv-fi.pdf
+/src/app/favicon.ico
+/src/app/icon.svg
 *.pem
 
 # debug

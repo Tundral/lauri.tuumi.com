@@ -67,7 +67,7 @@ export const ReferencesSection = ({
       <div style={{ marginBottom: "1rem" }}>
         <p style={{ fontSize: "0.78rem", color: theme.textMuted, margin: "0 0 0.35rem 0", fontStyle: "italic" }}>
           {buildNote(items.map((r) => r.firstName), noteTemplate)}{" "}
-          <span style={{ color: "#f59e0b" }}>❤</span>
+          <span style={{ color: theme.primary }}>&#x2764;</span>
         </p>
         <button
           onClick={() => setDialogOpen(true)}
@@ -77,8 +77,10 @@ export const ReferencesSection = ({
             padding: 0,
             cursor: "pointer",
             fontSize: "0.73rem",
-            fontWeight: 600,
-            color: theme.accentBlue,
+            fontWeight: 700,
+            color: theme.secondary,
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
           }}
         >
           {verificationLabels.howToVerifyLink}
@@ -97,26 +99,33 @@ export const ReferencesSection = ({
             key={`${ref.firstName} ${ref.lastName}`}
             style={{
               background: theme.cardBg,
-              borderRight: `1px solid ${theme.border}`,
-              borderBottom: `1px solid ${theme.border}`,
-              borderLeft: `1px solid ${theme.border}`,
-              borderTop: "3px solid #f59e0b",
-              borderRadius: 6,
+              border: `1px solid ${theme.border}`,
+              borderTop: `3px solid ${theme.primary}`,
               padding: "1rem",
-              boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+              boxShadow: "2px 2px 0px rgba(0, 212, 255, 0.1)",
               display: "flex",
               flexDirection: "column",
             }}
           >
-            <div style={{ fontWeight: 700, fontSize: "0.88rem", color: theme.text }}>
+            <div
+              style={{
+                fontWeight: 900,
+                fontSize: "0.88rem",
+                color: theme.text,
+                textTransform: "uppercase",
+                fontStyle: "italic",
+              }}
+            >
               {ref.firstName} {ref.lastName}
             </div>
             <div
               style={{
                 fontSize: "0.76rem",
-                fontWeight: 600,
-                color: theme.accentBlue,
+                fontWeight: 700,
+                color: theme.secondary,
                 marginTop: "0.1rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
               }}
             >
               {ref.title}
@@ -132,7 +141,7 @@ export const ReferencesSection = ({
                 color: theme.textMuted,
                 lineHeight: 1.55,
                 fontStyle: "italic",
-                borderLeft: "2px solid #f59e0b",
+                borderLeft: `2px solid ${theme.primary}`,
                 paddingLeft: "0.6rem",
                 flexGrow: 1,
               }}
@@ -160,7 +169,7 @@ export const ReferencesSection = ({
                   alignItems: "center",
                   gap: "0.35rem",
                   fontSize: "0.73rem",
-                  color: ref.verification.type === "pr" ? "#6e7681" : theme.accentBlue,
+                  color: ref.verification.type === "pr" ? "#6e7681" : theme.secondary,
                   textDecoration: "none",
                 }}
               >
@@ -182,30 +191,29 @@ export const ReferencesSection = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: "rgba(0,0,0,0.55)",
+            background: "rgba(0,0,0,0.7)",
           }}
         >
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
               background: theme.cardBg,
-              borderRight: `1px solid ${theme.border}`,
-              borderBottom: `1px solid ${theme.border}`,
-              borderLeft: `1px solid ${theme.border}`,
-              borderTop: "3px solid #f59e0b",
-              borderRadius: 8,
+              border: `1px solid ${theme.border}`,
+              borderTop: `3px solid ${theme.primary}`,
               padding: "1.5rem",
               maxWidth: 420,
               width: "90vw",
-              boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+              boxShadow: "6px 6px 0px rgba(0, 212, 255, 0.2)",
             }}
           >
             <div
               style={{
-                fontWeight: 700,
+                fontWeight: 900,
                 fontSize: "0.95rem",
                 color: theme.text,
                 marginBottom: "1rem",
+                textTransform: "uppercase",
+                fontStyle: "italic",
               }}
             >
               {verificationLabels.dialog.title}
@@ -229,14 +237,15 @@ export const ReferencesSection = ({
               onClick={() => setDialogOpen(false)}
               style={{
                 marginTop: "1.25rem",
-                background: "#f59e0b",
-                color: "#0f172a",
+                background: theme.primary,
+                color: "#000",
                 border: "none",
-                borderRadius: 6,
                 padding: "0.5rem 1.1rem",
-                fontSize: "0.82rem",
-                fontWeight: 700,
+                fontSize: "0.78rem",
+                fontWeight: 800,
                 cursor: "pointer",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
               }}
             >
               {verificationLabels.dialog.close}

@@ -1,44 +1,26 @@
 @import "tailwindcss";
 
 body {
-  background: #f1f5f9;
-  color: #1e293b;
+  background: #0e0e0e;
+  color: #ffffff;
 }
 
 * {
   box-sizing: border-box;
 }
 
-:root {
-  --cv-page-bg: #f1f5f9;
-  --cv-card-bg: #ffffff;
-  --cv-border: #e2e8f0;
-  --cv-text: #0f172a;
-  --cv-text-muted: #94a3b8;
-  --cv-section-label: #334155;
-  --cv-section-line: #e2e8f0;
-  --cv-badge-bg: #e2e8f0;
-  --cv-badge-text: #475569;
-  --cv-core-badge-bg: #e2e8f0;
-  --cv-core-badge-text: #c2410c;
-  --cv-accent-blue: #1e40af;
-  --cv-muted-bg: #f1f5f9;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --cv-page-bg: #0f172a;
-    --cv-card-bg: #1e293b;
-    --cv-border: #334155;
-    --cv-text: #f1f5f9;
-    --cv-text-muted: #cbd5e1;
-    --cv-section-label: #94a3b8;
-    --cv-section-line: #334155;
-    --cv-badge-bg: #334155;
-    --cv-badge-text: #94a3b8;
-    --cv-core-badge-bg: #334155;
-    --cv-core-badge-text: #fb923c;
-    --cv-accent-blue: #60a5fa;
-    --cv-muted-bg: #334155;
+    --cv-page-bg: #0e0e0e;
+    --cv-card-bg: #121212;
+    --cv-border: #333333;
+    --cv-text: #e0e0e0;
+    --cv-text-muted: #d6d6de;
+    --cv-section-label: #00D4FF;
+    --cv-section-line: #333333;
+    --cv-muted-bg: #1a1a1a;
+    --cv-primary: #FFB800;
+    --cv-secondary: #00D4FF;
+    --cv-tertiary: #FF00FF;
   }
 }

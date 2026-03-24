@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsx --tsconfig tsconfig.scripts.json scripts/generate-pdfs.tsx && next build",
+    "build": "tsx --tsconfig tsconfig.scripts.json scripts/generate-favicon.ts && tsx --tsconfig tsconfig.scripts.json scripts/generate-pdfs.tsx && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -24,6 +24,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.0",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5"
